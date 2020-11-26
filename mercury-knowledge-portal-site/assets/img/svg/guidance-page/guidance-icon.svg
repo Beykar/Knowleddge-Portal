@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 6 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="27" cy="27" r="27"></circle>
+        <filter x="-11.1%" y="-11.1%" width="122.2%" height="122.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="7.1-Guidance" transform="translate(-33.000000, -142.000000)">
+            <g id="Group-6-Copy" transform="translate(37.000000, 146.000000)">
+                <g id="Group-8">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#EDEDED" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <g id="sign-post" transform="translate(10.800000, 10.800000)" fill-rule="nonzero">
+                    <polygon id="Path" fill="#FFA900" points="28.5812835 4.05 16.2 4.05 16.2 9.45 28.5812835 9.45 31.05 6.75"></polygon>
+                    <polygon id="Path" fill="#FBBF00" points="2.46871651 9.45 0 12.1500301 2.46871651 14.85 14.85 14.85 14.85 9.45"></polygon>
+                    <rect id="Rectangle" fill="#984D00" x="14.85" y="0" width="4.05" height="31.05"></rect>
+                    <g id="Group" transform="translate(8.100000, 0.000000)" fill="#723802">
+                        <rect id="Rectangle" x="8.1" y="0" width="1.65993923" height="31.4507812"></rect>
+                        <rect id="Rectangle" x="0.0261692308" y="30.5015625" width="16.1476615" height="1.8984375"></rect>
+                    </g>
+                    <rect id="Rectangle" fill="#4D2602" x="16.2" y="31.05" width="6.75" height="1.35"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="27" cy="27" r="27"></circle>
+        <filter x="-11.1%" y="-11.1%" width="122.2%" height="122.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-259.000000, -23.000000)">
+            <g id="Group-5" transform="translate(263.000000, 27.000000)">
+                <g id="Group-3">
+                    <g id="Group-12-Copy">
+                        <g id="Group-8">
+                            <g id="Oval">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="#EDEDED" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                    <path d="M23.5139768,24.7089755 C23.9653957,23.8007818 25.1104246,21.9842905 27.5325481,20.6002971 C30.9126252,18.6757593 32.1457332,14.4372794 32.3108684,13.2586575 C32.4760035,12.0693142 35.3715922,10.6744953 35.7239088,14.5128495 C36.0762254,18.3512037 33.6980884,20.9462954 33.6980884,20.9462954 L41.9004723,20.9462954 C44.4107809,20.6002971 44.8070841,24.6334054 42.340868,24.6766032 L41.5590728,24.6874286 L41.5370265,24.8928001 L42.0104917,24.8928001 C44.0033486,24.8928001 44.0033486,28.7312584 42.0104917,28.7312584 L41.9113894,28.7312584 C43.4087349,29.2178836 43.3096326,32.4939385 41.4599705,32.4939385 L40.9314956,32.4939385 L40.9314956,32.5047639 C42.1975671,32.7750881 42.0656074,33.9319551 42.0656074,34.894276 C42.0656074,36.5162214 37.7717755,37.3703918 36.6927794,37.6622628 C33.5769399,38.4947824 29.4702894,37.5649378 25.9801929,37.2514158 L23.7892374,37.0027425 L19,37.0027425 L19,24.7089755 L23.5249999,24.7089755 L23.5139768,24.7089755 Z" id="Path" fill="#B9B9B9" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="18 24 23 24 23 38 18 38"></polygon>
+                    <polygon id="Path" fill="#DBDBDB" fill-rule="nonzero" points="10 23 20 23 20 39 10 39"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,64 @@
+<!-- Header Partial -->
+<header ng-controller="navCtrl">
+	<div class="mkp__nav-bar">
+		<div class="eylogo">
+			<a href="/UK/en/Home">
+				<!-- <img src="SiteAssets/mercury-knowledge-portal-site/assets/img/ey-logo.svg" alt="EY Ernst Young logo" width="32" height="33" border="0"> -->
+			</a>
+		</div>
+		<span>UK&amp;I Mercury Connections</span>
+		<div class="mkp__nav-search-wrapper" search-box>
+			<ul>
+				<li><a href="fred">Better Engagements Home</a></li>
+				<li class="selected"><a href="fred">Task Support</a></li>
+				<li><a href="fred">All Guidance</a></li>
+				<li><a href="fred">All Policies</a></li>
+			</ul>
+
+			<input type="button" class="button mkp_search-btn" title="Open search function">
+
+			<input id="search-input" value="" ng-model="selected" type="text" maxlength="2048" class="mkp__nav-search-query ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched mkp_slide-hide-search-input" placeholder="Search UK&I Mercury Connections..." uib-typeahead="state for state in smDocDataArrNoDup | filter:$viewValue | orderBy:orderByStartsWith($viewValue) | limitTo:10" ng-keyup="initFocus()" ng-keydown="$event.keyCode === 13 &amp;&amp; getSearchResults()" focus-me="selected" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-3-6672">
+
+			<input type="button"  class="button mkp_close-search-btn" value="X" title="Close search function">
+			
+		</div>
+	</div>
+	<div class="mkp__personalisation-bar" ng-if="loggedIn">
+		<img src="SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+		<span class="mkp__salutation">Good morning</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+		<fieldset enable-button>
+			<label for="mkp__select-business-unit">We're displaying content relevant to you. Currently displaying </label>
+			<select id="mkp__select-business-unit">
+				<option  value="">Business Unit</option>
+				<option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == currentUser.businessUnit" value="{{businessUnit}}">{{businessUnit}}</option>
+			</select>
+
+			<label for="mkp__select-service-line">and </label>
+			<select id="mkp__select-service-line">
+				<option value="">Service Line</option>
+				<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+			</select>
+
+			<button disabled id="mkp__button-update-selection" ng-click="getData(businessUnit,serviceLine)">Update selection</button>
+		</fieldset>
+	</div>
+	<div class="mkp__personalisation-bar" ng-if="!loggedIn">
+		<img src="SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+		<span class="mkp__salutation">Good morning</span> 
+		<fieldset enable-button>
+			<label for="mkp__select-business-unit">Select a Business Unit and a Service Line. Currently displaying </label>
+			<select id="mkp__select-business-unit">
+				<option  value="">Business Unit</option>
+				<option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == 'All'" value="{{businessUnit}}">{{businessUnit}}</option>
+			</select>
+
+			<label for="mkp__select-service-line">and </label>
+			<select id="mkp__select-service-line">
+				<option value="">Service Line</option>
+				<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == 'All'" value="{{serviceLine}}">{{serviceLine}}</option>
+			</select>
+
+			<button disabled id="mkp__button-update-selection" ng-click="getData(businessUnit,serviceLine)">Update selection</button>
+		</fieldset>
+	</div>
+</header>

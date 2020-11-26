@@ -1,0 +1,448 @@
+.mkp__hide {
+  position: absolute;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.mkp__no-personalisation-bar {
+  padding-top: 87px !important;
+  transition: padding 0.3s ease-in-out;
+
+  @include mq($from: tablet) {
+    padding-top: 128px !important;
+  }
+
+  @include mq($from: desktop) {
+    padding-top: 62px !important;
+  }
+}
+
+#mkpMainWrapper {
+  .mkp__rotate {
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  .mkp__icon-header {
+    position: relative;
+    img {
+      // Note. The imagery in the SVGs supplied does not always fill the canvas of the SVG. Hence a circle icon that should be 40px diameter is often smaller.
+      width: 54px;
+      height: 54px;
+      position: absolute;
+      left: 0;
+      top: 20%;
+    }
+  }
+  ul.mkp__triangle-bullet-points {
+    list-style-type: none;
+    > li {
+      color: #343434;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      @include fontSize(18px);
+      text-decoration: underline;
+      margin-left: 20px;
+
+		 a {
+			color: #343434;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+			@include fontSize(18px);
+			text-decoration: underline;
+			
+			span {
+			  font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+			}
+		}
+		
+      &:before {
+        // right triangle bullet point
+        content: "";
+        border-color: transparent $mkpOffBlack;
+        border-style: solid;
+        border-width: 3px 0 3px 5px;
+        display: block;
+        height: 0;
+        width: 0;
+        left: -14px;
+        top: 17px;
+        position: relative;
+      }
+      > ul.mkp__disc {
+        list-style-type: disc;
+        margin: 1px 0 1px 28px;
+        > li {
+          margin-bottom: 5px !important;
+          padding-left: 12px !important;
+        }
+      }
+    }
+  }
+
+  .mkp__level2 {
+	width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 3% 15px 20px;
+
+    .mkp__breadcrumb {
+      list-style-type: none;
+      margin-bottom: 46px;
+      @include mq($from: desktopMid) {
+        padding-top: 2%;
+      }
+      li {
+        display: inline-block;
+        color: $mkpOffBlack;
+        font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+        @include fontSize(12px);
+        a {
+          color: $mkpOffBlack;
+          text-decoration: underline;
+          text-transform: uppercase;
+        }
+        strong {
+          font-family: EYInterstate-Bold, Tahoma, Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    h1 {
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      strong {
+        font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+        font-weight: normal;
+      }
+      .mkp__version-number {
+        @include fontSize(12px);
+      }
+      &.mkp__icon-header {
+        padding-left: 71px; // 54 + 17
+        max-width: 26em;
+        img {
+          background-color: #ededed;
+        }
+      }
+    }
+
+    .mkp__level2-section-intro {
+      width: 100%;
+      float: left;
+      padding: 0px 0px 0px 17px;
+      
+      p {
+        max-width: 43em;
+      }
+    }
+
+    .mkp__level2-section-content-outer {
+      width: 100%;
+      float: left
+    }
+
+    .mkp__level2-section-content-1 {
+      width: 68%;
+      float: left;
+    }
+
+    .mkp__level2-section-content-2 {
+      float: right;
+      width: 32%;
+    }
+
+	.mkp__level2-intro-bg {
+    margin-left: -17px;
+  }
+	
+    .mkp__level2-section-content {
+      padding: 0;
+      margin-bottom: 40px;
+
+      h2 {
+        margin-left: 20px;
+        line-height: 12px;
+        &.mkp__icon-header {
+          padding-left: 66px;
+          margin-right: 4em;
+          @include mq($from: desktop) {
+            max-width: 30em;
+            margin-right: 0;
+          }
+          img {
+            width: 40px;
+            height: 40px;
+            left: 1px;
+            top: -14px;
+          }
+        }
+      }
+
+      .mkp__master-accordion-switch {
+        float: right;
+        margin-top: -15px;
+        @include mq($from: desktop) {
+          padding-right: 35px;
+        }
+
+        a {
+          display: block;
+          color: $mkpOffBlack;
+          font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial,
+            sans-serif;
+          @include fontSize(18px);
+          line-height: 1;
+          text-decoration: underline;
+        }
+      }
+
+      .mkp__accordion {
+        border-top: 1px solid $mkpGrayLight;
+        padding: 25px 17px 0 17px;
+        margin: 20px 0 0 0;
+        position: relative;
+
+        h3 {
+          font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+          cursor: pointer;
+        }
+
+		> div {
+          margin-bottom: 10px;
+        }
+		
+        .mkp__accordion-switch {
+          position: absolute;
+          right: 20px;
+          top: 30px;
+          color: $mkpOffBlack;
+          transition: transform 0.3s ease-in-out;
+          @include fontSize(17px);
+          @include mq($from: desktopMid) {
+            right: 95px;
+          }
+        }
+        .mkp__accordion-content {
+          
+          img {
+            max-width: 100%;
+            @include mq($from: desktop) {
+              max-width: 686px;
+            }
+          }
+          ul.mkp__triangle-bullet-points {
+            margin: 0 0 20px 0;
+          }
+        }
+
+		.mkp__accordion-content--image {
+          width: 100%;
+          height: auto;
+          display: block;
+          padding: 20px 0;
+        }	
+		
+        ul.mkp__hidden-accordion-content,
+        ol.mkp__hidden-accordion-content,
+        .mkp__hidden-accordion-content > ul {
+          padding: 0;
+          margin: 30px 0 0 0;
+          li {
+            padding: 0 0 0 38px;
+            margin: 0;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial,
+              sans-serif;
+            @include fontSize(18px);
+
+            a {
+              color: $mkpOffBlack;
+              text-decoration: underline;
+              font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial,
+                sans-serif;
+            }
+          }
+        }
+
+        &:last-of-type {
+          border-bottom: 1px solid $mkpGrayLight;
+          padding-bottom: 25px;
+        }
+      }
+    }
+
+    aside {
+      padding: 20px 10px 0 10px;
+      @include mq($from: desktop) {
+        //float: right;
+        //width: 32%;
+        min-width: 300px;
+        padding: 0px 10px 0 17px;
+        //position: relative;
+        //right: 0;
+        //bottom: 230px;
+      }
+
+      .mkp__list-wrapper {
+        padding: 22px 20px;
+        box-shadow: 0 0 10px 0 rgba(10, 31, 68, 0.1);
+        margin-bottom: 19px;
+        @include mq($from: desktop) {
+          min-width: 400px;
+        }
+        h2 {
+          &.mkp__icon-header {
+            margin: 0 0 20px 0;
+            padding-left: 59px;
+            max-width: 13em;
+            img {
+              width: 40px;
+              height: 40px;
+              left: 1px;
+              top: -7px;
+            }
+          }
+        }
+        ol {
+          margin-left: 79px;
+          li {
+            font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial,
+              sans-serif;
+            @include fontSize(18px);
+            line-height: 30px;
+            padding-left: 9px;
+            a {
+              color: $mkpOffBlack;
+              font-family: EYInterstate-Light, Tahoma, Helvetica, Arial,
+                sans-serif;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Additions required for pages with a .mkp_level3 class
+  .mkp__level3 {
+    h1 {
+      margin-bottom: 5px;
+    }
+    .mkp__share-article {
+      @extend .mkp__icon-header;
+      color: $mkpOffBlack;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      @include fontSize(16px);
+      text-decoration: underline;
+      margin: 8px 0 26px 73px;
+      display: block;
+      padding: 0 0 0 24px;
+      img {
+        width: 16px;
+        height: 16px;
+        left: 1px;
+        top: 2px;
+      }
+    }
+    .mkp__classification-panel {
+      box-shadow: 0 0 10px 0 rgba(10, 31, 68, 0.12);
+      padding: 14px 13px;
+      margin: 0 0 47px 0;
+      max-width: 929px;
+      dl {
+        margin: 0;
+        overflow: hidden;
+        dt,
+        dd {
+          margin: 0;
+          float: left;
+          font-family: EYInterstate-Bold, Tahoma, Helvetica, Arial, sans-serif;
+          @include fontSize(18px);
+          line-height: 28px;
+          &.mkp__minor {
+            @include fontSize(12px);
+            text-transform: uppercase;
+            line-height: 20px;
+          }
+          span {
+            color: #d90000;
+            &.mkp__medium {
+              color: #c96803;
+            }
+          }
+        }
+        dt {
+          clear: both;
+          padding-right: 0.5em;
+          font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+        }
+      }
+    }
+    div.mkp__hidden-accordion-content {
+      padding: 60px 10px 67px 30px;
+
+      .mkp__image-title {
+        background-color: $eyYellow;
+        display: inline-block;
+        min-width: 200px;
+        min-height: 22px;
+        line-height: 22px;
+        font-family: EYInterstate-Bold, Tahoma, Helvetica, Arial, sans-serif;
+        @include fontSize(15px);
+        text-align: center;
+        margin: 0 0 32px 0;
+      }
+      img {
+        margin: 0 0 46px 0;
+      }
+      ol {
+        margin: 0 0 0 20px;
+        li {
+          font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial,
+            sans-serif;
+          @include fontSize(14px);
+          margin: 0 0 9px 0;
+        }
+      }
+    }
+    
+	.mkp__level2-section-intro {
+      ul.mkp__triangle-bullet-points {
+        margin: 0px 0 0px 30px;
+        padding: 10px 0 20px;
+        li {
+          font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+          @include fontSize(18px);
+          max-width: 33em;
+        }
+      }
+    }
+  }
+
+  // Additions required for pages with a .mkp__level3-policy class
+  .mkp__level3-policy {
+    .mkp__level2-section-content {
+      .mkp__accordion {
+        ul.mkp__triangle-bullet-points {
+          li {
+            padding-left: 25px;
+            margin-bottom: 25px;
+            &:before {
+              left: -24px;
+            }
+          }
+        }
+        ul.mkp__triangle-bullet-points.mkp__hidden-accordion-content {
+          margin-bottom: 55px;
+        }
+        div.mkp__hidden-accordion-content {
+          padding-top: 40px;
+          padding-left: 0;
+          padding-bottom: 35px;
+        }
+      }
+    }
+  }
+}

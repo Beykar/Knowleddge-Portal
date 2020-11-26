@@ -1,0 +1,27 @@
+
+/* Variables definitions
+   ========================================================================== */
+
+   $dash-background: #2E2E38;
+   $dash-background-dark: #1C1C22;
+   $dash-background-medium: #26262E;
+
+   $dash-font-grey: #94979D;
+   $dash-font-grey-lite: #707070;
+   $dash-font-grey-medium: #8A8A94;
+
+   @mixin transition($transition-property, $transition-time, $method) {
+        -webkit-transition: $transition-property $transition-time $method;
+        -moz-transition: $transition-property $transition-time $method;
+        -ms-transition: $transition-property $transition-time $method;
+        -o-transition: $transition-property $transition-time $method;
+        transition: $transition-property $transition-time $method;
+    }
+    
+    @mixin rotate($degrees) {
+        -webkit-transform: rotate($degrees);
+        -moz-transform: rotate($degrees);
+        -ms-transform: rotate($degrees);
+        -o-transform: rotate($degrees);
+        transform: rotate($degrees);
+    }

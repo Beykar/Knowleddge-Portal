@@ -1,0 +1,86 @@
+<div class="mkp__search-results-page" ng-controller="policyGuidelinesCtrl">
+    <div class="mkp__personalisation-bar" ng-if="loggedIn">
+        <div class="mkp__personalisation-inner">	 
+            <img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+            <span class="mkp__salutation">Hello</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+            <fieldset enable-button>
+                <label for="mkp__select-business-unit">We're displaying content relevant to you. Currently displaying </label>
+                <select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+                    <option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == currentUser.businessUnit" value="{{businessUnit}}">{{businessUnit}}</option>
+                </select>
+    
+                <label for="mkp__select-service-line">and </label>
+                <select id="mkp__select-service-line" ng-model="selectedServiceLine">
+                    <option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+                </select>
+
+                <button id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+            </fieldset>
+        </div>
+    </div>
+    <div class="mkp__personalisation-bar" ng-if="!loggedIn">
+        <div class="mkp__personalisation-inner">	 
+            <img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+            <span class="mkp__salutation">Hello</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+            <fieldset enable-button>
+                <label for="mkp__select-business-unit">Select a Business Unit and a Service Line. Currently displaying </label>
+                <select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+                    <option ng-repeat="businessUnit in businessUnitArr" value="{{businessUnit}}" >{{businessUnit}}</option>
+                </select>
+    
+                <label for="mkp__select-service-line">and </label>
+                <select id="mkp__select-service-line" ng-model="selectedServiceLine">
+                    <option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+                </select>
+    
+                <button  id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+            </fieldset>
+        </div>
+    </div>
+	
+	<h1></h1>
+
+    <div class="mkp__search-results-message-cont">
+        <p ng-if="searchKeyowrd !== ''">{{totalResults}} results:</p>
+    </div>
+
+    <div class="mkp__search-results-cont" ng-init="getAllPolicies()">
+        <h2>Policy and Guidance</h2>
+        <ul>
+            <li ng-repeat="result in policies | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                <h3>
+                    <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{result.ELS}}/{{result.BU}}/{{result.SL}}/policy-{{result.Title}}">{{result.Heading}}</a>
+                </h3>
+                <p ng-bind-html="$sce.trustAsHtml(result.StandFirst) | limitHtml: 200"></p>
+            </li>
+        </ul>
+    </div>
+           
+    <!--<div class="mkp__search-results-cont" ng-init="getAllGuidelines()">
+        <h2>Guidance</h2>
+        <ul>
+            <li ng-repeat="result in guidelines | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                <h3>
+                    <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{result.ELS}}/{{result.BU}}/{{result.SL}}/guidance-{{result.Title}}">{{result.Heading}}</a>
+                </h3>
+                <p ng-bind-html="$sce.trustAsHtml(result.StandFirst) | limitHtml: 200"></p>
+            </li>
+        </ul>
+    </div>-->
+            
+ 
+    <div class="mkp__pagination" href="#">
+        <ul>
+            <li ng-class="prevPageDisabled()">
+                <a href ng-click="prevPage()">« Prev</a>
+            </li>
+            <li ng-repeat="n in range()"
+                ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                <a href="#">{{n+1}}</a>
+            </li>
+            <li ng-class="nextPageDisabled()">
+                <a href ng-click="nextPage()">Next »</a>
+            </li>
+        </ul>
+    </div>   
+</div>       

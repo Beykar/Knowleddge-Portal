@@ -1,0 +1,59 @@
+#eymain .hero__section {
+    height: calc(100vh - 75.2px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* margin-top: -70px; */
+}
+#eymain .col-innerwrap{
+   height: 100%;
+   border: 1px solid #a6a3a3;
+   padding-top: 10px;
+}
+#eymain .row-sections-media{
+   /*background: #f0f0f0;*/
+   color:#FFF;
+   margin-bottom: 15px;
+}
+#eymain .row-sections-media .media img{
+   max-width: 80px;
+}
+#eymain .info-v6-2 {
+   background: #494848;
+   min-height: 150px;
+}
+#eymain .info-v6-2 p{
+   color:#fff;
+}
+
+#eymain .media-body{
+   flex:none;
+}
+
+#eymain .supportInfoDiv, #eymain .infoDivContent{
+background: #515151;
+color: #fff;
+}
+
+#eymain .infoDivContent img{
+   max-width:52px;
+   max-height:52px;
+}
+
+#eymain .infoDivContent a{
+   text-decoration: none;
+   color: #ffffff;
+}
+#eymain .infoDivContent a:hover{
+   cursor: pointer;
+   color:#ffe600;
+}
+
+#eymain .coexist-cont p {
+   font-size:16px;
+}
+
+#eymain .coexist-cont ul li {
+   font-size:16px !important;
+   line-height:1.6em !important;
+}

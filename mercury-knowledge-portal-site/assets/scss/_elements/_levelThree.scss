@@ -1,0 +1,199 @@
+#mkpMainWrapper{
+    .mkp__stand-first-para{
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 50px;
+
+        p {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        p span {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        span {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        span font {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        em {
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-style: normal !important; 
+        }
+
+        div {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        ol {
+            max-width: 100% !important;
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+            padding: 10px 30px;
+        }
+
+        ul {
+            max-width: 100% !important;
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+            padding: 10px 30px;
+            list-style: none !important;
+            li {
+                margin-left:20px;
+            }
+            li:before {
+                content: "";
+                border-color: transparent $mkpOffBlack;
+                border-style: solid;
+                border-width: 3px 0 3px 5px;
+                display: block;
+                height: 0;
+                width: 0;
+                left: -15px;
+                top: 17px;
+                position: relative;
+            }
+        }
+      
+    }
+    .mkp__accordion h3{
+        font-weight:500;
+        text-decoration: underline;
+    }
+    .mkp__accordion-content--wording{
+        width: 80%;
+        max-width: 100% !important;
+        color: #343434 !important;
+        font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 18px !important;
+        font-size: 1.125rem !important;
+        line-height: 28px !important;
+        padding-top: 10px;
+
+        p {
+            max-width: 100% !important;
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+
+            span {
+               max-width: 100% !important;
+                color: #343434 !important;
+                font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+                font-size: 18px !important;
+                font-size: 1.125rem !important;
+                line-height: 28px !important; 
+            }
+
+            font {
+                color: #343434 !important;
+                font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+                font-size: 18px !important;
+                font-size: 1.125rem !important;
+                line-height: 28px !important;
+            }
+            
+        }
+
+        span {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        span font {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+        }
+
+        em {
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-style: normal !important; 
+        }
+
+        a {
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+            text-decoration: underline;
+            span {
+                font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+            }
+        }
+
+        ol {
+            max-width: 100% !important;
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+            padding: 10px 30px;
+        }
+        
+        ul {
+            max-width: 100% !important;
+            color: #343434 !important;
+            font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif !important;
+            font-size: 18px !important;
+            font-size: 1.125rem !important;
+            line-height: 28px !important;
+            padding: 10px 12px;
+            list-style: none !important;
+            li {
+                margin-left:10px;
+            }
+            li:before {
+              content: "";
+              border-color: transparent $mkpOffBlack;
+              border-style: solid;
+              border-width: 3px 0 3px 5px;
+              display: block;
+              height: 0;
+              width: 0;
+              left: -15px;
+              top: 16px;
+              position: relative;
+            }
+        }
+    }
+}

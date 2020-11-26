@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>sunrise</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M23,0 C35.7017941,0 46,10.2982059 46,23 C46,35.7003157 35.7017941,46 23,46 C10.2982059,46 0,35.7016298 0,23 C0,10.2983702 10.2967275,0 23,0 Z" id="path-1"></path>
+        <filter x="-13.0%" y="-13.0%" width="126.1%" height="126.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HoverTest_1.1" transform="translate(-36.000000, -114.000000)">
+            <g id="sunrise" transform="translate(40.000000, 118.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                    <use fill="#EBEBEB" xlink:href="#path-1"></use>
+                </g>
+                <g mask="url(#mask-2)" fill-rule="nonzero">
+                    <g transform="translate(0.000000, 17.000000)">
+                        <polygon id="Path" fill="#FFE370" points="42 10.963607 36.9761015 20 9.02389847 20 4 10.963607 12.6127874 8.48422374 15.1297414 0 23 4.24614557 23.0336686 4.228218 30.8702586 0 33.3872126 8.48422374"></polygon>
+                        <polygon id="Path" fill="#FFD100" points="42 11.5117874 36.9671832 21 23 21 23 4.4396289 30.8505014 0 33.3719234 8.90843492"></polygon>
+                        <path d="M33,20 L12,20 L12.0091344,18.5973061 C12.0274032,15.7621923 13.1271857,13.0998607 15.1047847,11.1007896 C17.0842105,9.1007896 19.7103523,8 22.5,8 L22.5337973,8 C25.3106568,8.00928936 27.9240104,9.10915002 29.8952153,11.1007896 C31.8728143,13.0998607 32.9725968,15.7621923 32.9908656,18.5973061 L33,20 Z" id="Path" fill="#FFA720"></path>
+                        <path d="M33,20 L23,20 L23,8 C25.6531681,8.00928936 28.1501135,9.10915002 30.0335137,11.1007896 C31.9230232,13.0998607 32.9738174,15.7621923 32.9912725,18.5973061 L33,20 Z" id="Path" fill="#FF8600"></path>
+                        <rect id="Rectangle" fill="#DCCABA" x="0" y="19" width="46" height="10"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

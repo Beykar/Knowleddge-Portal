@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="20" cy="20" r="20"></circle>
+        <filter x="-15.0%" y="-15.0%" width="130.0%" height="130.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4.1-ContentsPage" transform="translate(-980.000000, -665.000000)">
+            <g id="Group-6" transform="translate(984.000000, 669.000000)">
+                <g id="Group-8">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#EDEDED" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <g id="insurance" transform="translate(6.000000, 8.000000)" fill-rule="nonzero">
+                    <path d="M22.6086957,0 L5.39130435,0 C5.17530435,0 5,0.168 5,0.375 L5,23.625 C5,23.832 5.17530435,24 5.39130435,24 L22.6086957,24 C22.8246957,24 23,23.832 23,23.625 L23,0.375 C23,0.168 22.8246957,0 22.6086957,0 Z" id="Path" fill="#FF7B66"></path>
+                    <polygon id="Path" fill="#FFFEFE" points="7 22 16.7222222 22 21 18.1538462 21 2 7 2"></polygon>
+                    <path d="M10,0 L10,3.63636364 C10,3.83709091 10.168,4 10.375,4 L18.625,4 C18.832,4 19,3.83709091 19,3.63636364 L19,0 L10,0 Z" id="Path" fill="#FFE585"></path>
+                    <polygon id="Path" fill="#FFFEFA" points="11 2 12 2 12 3 11 3"></polygon>
+                    <polygon id="Path" fill="#FFFEFA" points="17 2 18 2 18 3 17 3"></polygon>
+                    <g id="Group" transform="translate(9.000000, 6.000000)" fill="#EBEBEB">
+                        <path d="M8.12903226,12.1904762 L12,12.1904762 L7.74193548,16 L7.74193548,12.5714286 C7.74193548,12.3611429 7.91535484,12.1904762 8.12903226,12.1904762 Z" id="Path"></path>
+                        <polygon id="Path" points="0.774193548 0 9.67741935 0 9.67741935 6.0952381 0.774193548 6.0952381"></polygon>
+                        <polygon id="Path" points="3.09677419 8 7.35483871 8 7.35483871 8.76190476 3.09677419 8.76190476"></polygon>
+                        <polygon id="Path" points="8.12903226 8 10.4516129 8 10.4516129 8.76190476 8.12903226 8.76190476"></polygon>
+                        <polygon id="Path" points="1.93548387 10.2857143 6.19354839 10.2857143 6.19354839 11.047619 1.93548387 11.047619"></polygon>
+                        <polygon id="Path" points="6.96774194 10.2857143 10.4516129 10.2857143 10.4516129 11.047619 6.96774194 11.047619"></polygon>
+                        <polygon id="Path" points="0 12.5714286 6.58064516 12.5714286 6.58064516 13.3333333 0 13.3333333"></polygon>
+                    </g>
+                    <polygon id="Path" fill="#FFFEFA" points="12 2 16 2 16 3 12 3"></polygon>
+                    <path d="M12,10.0588235 L11.4592,12.9880294 C11.0356,15.2821471 9.7152,17.3365294 7.7652,18.7344118 L6,20 L4.1828,18.6801176 C2.2584,17.2826176 0.9564,15.2423824 0.5364,12.967 L0,10.0588235 L6,7 L12,10.0588235 Z" id="Path" fill="#BDE660"></path>
+                    <path d="M5.19552861,17.4019628 C3.6718454,16.2772848 2.64948844,14.6498875 2.31716559,12.8197097 L2,11.0719689 L6,9 L10,11.0719689 L9.67904509,12.8392149 C9.34331186,14.6863218 8.30769231,16.3229196 6.76278894,17.4483337 L6.00568397,18 L5.19552861,17.4019628 Z" id="Path" fill="#FDFEFC"></path>
+                    <path d="M5.31567558,15 C5.31117459,15 5.30701982,15 5.30251883,15 C5.19830347,14.9962725 5.10101272,14.9509215 5.03869125,14.8760613 L4,13.633568 L4.55396867,13.26082 L5.33644941,14.1967281 L7.47892322,12 L8,12.4090909 L5.57638709,14.8940774 C5.51025708,14.9614827 5.41538994,15 5.31567558,15 L5.31567558,15 Z" id="Path" fill="#BDE660"></path>
+                    <polygon id="Path" fill="#BDE660" points="5 10 6 10 6 11 5 11"></polygon>
+                    <polygon id="Path" fill="#BDE660" points="5 16 6 16 6 17 5 17"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

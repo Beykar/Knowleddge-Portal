@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>economic</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-8.0%" y="-8.0%" width="116.0%" height="116.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HoverTest_1.1" transform="translate(-73.000000, -1067.000000)" fill-rule="nonzero">
+            <g id="economic" filter="url(#filter-1)" transform="translate(77.000000, 1071.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="50" cy="50" r="50"></circle>
+                <rect id="Rectangle" fill="#DDDDDD" x="14.7164063" y="24.259375" width="70.5669922" height="51.4814453"></rect>
+                <rect id="Rectangle" fill="#DDDDDD" x="49.9814453" y="24.259375" width="35.3021484" height="51.4814453"></rect>
+                <path d="M78.9261719,34.4726562 L21.0738281,34.4726562 C19.5160156,34.4726562 18.2533203,33.2097656 18.2533203,31.6521484 L18.2533203,31.3462891 C18.2533203,29.7884766 19.5162109,28.5257813 21.0738281,28.5257813 L78.9259766,28.5257813 C80.4837891,28.5257813 81.7464844,29.7886719 81.7464844,31.3462891 L81.7464844,31.6521484 C81.7464844,33.2097656 80.4837891,34.4726562 78.9261719,34.4726562 Z" id="Path" fill="#878787"></path>
+                <path d="M78.9261719,28.5255859 L49.9814453,28.5255859 L49.9814453,34.4726562 L78.9261719,34.4726562 C80.4839844,34.4726562 81.7466797,33.2097656 81.7466797,31.6521484 L81.7466797,31.3462891 C81.7466797,29.7884766 80.4837891,28.5255859 78.9261719,28.5255859 Z" id="Path" fill="#FFFFFF"></path>
+                <rect id="Rectangle" fill="#FFFFFF" x="18.2533203" y="38.8671875" width="63.4933594" height="32.53125"></rect>
+                <rect id="Rectangle" fill="#E9E9E9" x="49.9814453" y="38.8671875" width="31.7652344" height="32.5314453"></rect>
+                <polygon id="Path" fill="#878787" points="22.3572266 66.7222656 17.9955078 62.8099609 30.0802734 49.3369141 39.2037109 56.9611328 51.4652344 41.6041016 64.5318359 56.3666016 78.2132813 36.2433594 83.0587891 39.5378906 65.1400391 65.8939453 51.6964844 50.7056641 40.0441406 65.2994141 30.6642578 57.4611328"></polygon>
+                <polygon id="Path" fill="#878787" points="85.9240234 48.3544922 83.6525391 33.3939453 68.6929688 35.6689453 69.5742188 41.4619141 75.2525391 40.5982422 64.5318359 56.3666016 51.4652344 41.6041016 49.9814453 43.4625 49.9814453 52.8535156 51.6964844 50.7056641 65.1400391 65.8939453 79.4619141 44.8283203 80.1310547 49.2339844"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

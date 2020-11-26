@@ -1,0 +1,118 @@
+#mkpMainWrapper .mkp__main-cont {
+	.mkp__search-results-page {
+		width: 100%;
+		padding: 0 10px;
+		
+		@include mq($from: desktop) {
+			padding: 0% 4%;
+		}
+		.mkp__search-results-box-wrapper {
+			border: 1px solid $mkpOffBlack;
+			@include mq($from: desktop) { 
+				width: 680px;
+			}
+			height: 41px;
+			margin-bottom: 53px;
+			padding: 8px 0 0 13px;
+			
+			ul {
+				list-style-type: none;
+				li {
+					margin-bottom: 0;
+				}
+			}
+		
+			input {
+				border: 0;
+				min-width: 1em;
+				@include fontSize(18px);
+				padding: 0;
+				margin: 0;
+			}
+			#mkp_search-btn {
+				background-image: url('../img/svg/magnifier-search-dark-icon.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 18px;
+				height: 18px;
+			}
+			#search-input {
+				padding:0 0 0 10px;
+				width: 80%;
+				@include mq($from: desktop) { 
+					width: 614px;
+				}
+			}
+		}
+
+		.mkp__search-results-message-cont {
+			border-bottom: 1px solid $mkpGrayLight;
+			margin-bottom: 33px;
+			padding-bottom: 16px;
+		}
+
+		h1 {
+			font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+			margin-bottom: 41px;
+		}
+
+		.mkp__search-results-cont {
+			padding-bottom: 15px;
+			width: 100%;
+
+			p {
+				max-width: 70%;
+			}
+		}
+
+		h2 { // same size as first h1
+			font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+			@include fontSize(32px);
+			line-height: 41px;
+			border-bottom: 1px solid $mkpGrayLight;
+			margin-bottom: 25px;
+			padding-bottom: 10px;
+		}
+
+		ul {
+			list-style-type: none;
+			li {
+				margin-bottom: 43px;
+			}
+		}
+		h3 {
+			font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+			a {
+				color: $mkpOffBlack;
+				text-decoration: underline;
+			}
+		}
+		.mkp__pagination {
+			color: $mkpOffBlack;
+			text-decoration: underline;
+			font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+			@include fontSize(18px);
+			line-height: 28px;
+			display: block;
+			margin: 2% 0;
+			position: relative;
+			i { // https://fontawesome.com/icons/long-arrow-right
+				position: absolute;
+				left:-58px;
+				top:0px;
+				@include fontSize(44px);
+			}
+			a {
+				color: $mkpOffBlack;
+			}
+			
+			ul {
+				li {
+					margin-bottom: 0;
+					display: inline;
+					padding-right: 1%;
+				}
+			}
+		}
+	}
+}

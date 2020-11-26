@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="108px" viewBox="0 0 106 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M53.1239515,8.61250654 L1.3232166,60.9476938 C-0.441072202,62.715605 -0.441072202,65.5833111 1.3232166,67.3530135 L37.9067371,104.011647 C39.6710259,105.779558 42.5328561,105.779558 44.2989324,104.011647 L94.737572,52.1027642 L94.737572,8.61250654 L53.1239515,8.61250654 Z M76.8623054,33.6892613 C72.9136591,33.6892613 69.7121988,30.4812279 69.7121988,26.5244743 C69.7121988,22.5677206 72.9136591,19.3596872 76.8623054,19.3596872 C80.8109518,19.3596872 84.012412,22.5677206 84.012412,26.5244743 C84.012412,30.4812279 80.8109518,33.6892613 76.8623054,33.6892613 Z" id="path-1"></path>
+        <filter x="-3.2%" y="-3.1%" width="106.3%" height="106.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HoverTest_1.1" transform="translate(-543.000000, -579.000000)">
+            <g id="Group-12" transform="translate(545.000000, 579.000000)">
+                <g id="Shape" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <path d="M77.1813086,12.5875096 C69.3151917,12.5875096 62.9375478,18.9651535 62.9375478,26.8312704 C62.9375478,34.6973873 69.3151917,41.0750312 77.1813086,41.0750312 C85.0474255,41.0750312 91.4250694,34.6973873 91.4250694,26.8312704 C91.4250694,18.9651535 85.0474255,12.5875096 77.1813086,12.5875096 Z M77.1813086,33.9531508 C73.2482502,33.9531508 70.0594282,30.7643288 70.0594282,26.8312704 C70.0594282,22.8982119 73.2482502,19.70939 77.1813086,19.70939 C81.1143671,19.70939 84.303189,22.8982119 84.303189,26.8312704 C84.303189,30.7643288 81.1143671,33.9531508 77.1813086,33.9531508 Z" id="Shape" fill="#DBDBDB" fill-rule="nonzero"></path>
+                <path d="M77.3059169,28.4875216 C76.8501308,28.4875216 76.3943447,28.3130383 76.0471639,27.965852 C75.3510218,27.2696991 75.3510218,26.1444596 76.0471639,25.4483067 L100.972966,0.522114699 C101.669108,-0.174038233 102.79433,-0.174038233 103.490472,0.522114699 C104.186615,1.21826763 104.186615,2.34350715 103.490472,3.03966009 L78.56467,27.965852 C78.2174891,28.3130383 77.761703,28.4875216 77.3059169,28.4875216 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <text id="£" transform="translate(43.562513, 60.000000) rotate(43.000000) translate(-43.562513, -60.000000) " font-family="EYInterstate-Light, EYInterstate" font-size="60" font-weight="300" fill="#DBDBDB">
+                    <tspan x="27" y="82">£</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M4.85783747,-1.68564643 L4.38036692,-1.21257944 C3.98803766,-0.823868495 3.98510443,-0.190710311 4.37381538,0.20161895 C4.37573326,0.203554688 4.37765905,0.205482578 4.3795927,0.207402573 L9.82767152,5.61702128 L4.3795927,11.02664 C3.98768755,11.4157785 3.98544477,12.0489395 4.3745833,12.4408447 C4.3765033,12.4427783 4.37843119,12.4447041 4.38036692,12.446622 L4.85783747,12.919689 C5.24759881,13.3058557 5.87572296,13.3058557 6.2654843,12.919689 L13.636129,5.61702128 L6.2654843,-1.68564643 C5.87572296,-2.07181314 5.24759881,-2.07181314 4.85783747,-1.68564643 Z" id="path-1"></path>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4.1-ContentsPage" transform="translate(-847.000000, -677.000000)">
+            <g id="icon" transform="translate(854.347826, 682.117021) scale(-1, 1) rotate(180.000000) translate(-854.347826, -682.117021) translate(846.000000, 676.500000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#090909" transform="translate(8.650145, 5.617021) scale(-1, 1) rotate(-270.000000) translate(-8.650145, -5.617021) " xlink:href="#path-1"></use>
+                <g id="↪🎨" mask="url(#mask-2)" fill="#343434">
+                    <g transform="translate(-6.956522, -10.531915)" id="Atoms-/-Colors-/-Black">
+                        <rect x="0" y="0" width="32" height="32.2978723"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

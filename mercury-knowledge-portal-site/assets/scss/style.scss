@@ -1,0 +1,57 @@
+/**
+ * EY - SmartMaps - Custom styles
+ *
+ * @author: EY
+ * @version v0.0.1
+ */
+
+
+$mq-responsive: true;
+
+$mq-breakpoints: (
+    mobile:  320px,
+    midMobile: 480px,
+    tablet:  740px,
+    desktop: 	980px,
+    desktopMid:    1135px,
+    desktopWide:    1400px,
+    desktopXL:    1800px
+);
+
+$mq-static-breakpoint: desktop;
+//$mq-show-breakpoints: (mobile, midMobile, tablet, desktop, desktopMid, desktopWide, desktopXL);
+
+//Third Party 
+@import '_third-party/_sass-mq';
+@import '_third-party/_normalize';
+
+//Tools
+@import '_tools/_helpers';
+@import '_tools/_variables';
+@import '_tools/_mixins';
+
+//Base 
+@import '_base/_base';
+@import '_base/_typography';
+@import '_base/_buttons';
+@import '_base/_inherited';
+@import '_base/_bootstrap1';
+@import '_base/_main';
+
+//Elements
+@import '_elements/_header';
+@import '_elements/_home';
+@import '_elements/_beNewHomepage';
+@import '_elements/_engagementLifecycle';
+@import '_elements/_footer';
+@import '_elements/_search';
+@import '_elements/_bigSwitch';
+@import '_elements/_actionsToTake';
+@import '_elements/_searchResults';
+@import '_elements/_levelThree';
+
+
+// Print Stylesheets
+@media print {
+    @import '_media/_print';
+}

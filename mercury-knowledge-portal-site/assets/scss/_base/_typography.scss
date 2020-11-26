@@ -1,0 +1,120 @@
+
+/* Typography
+   ========================================================================== */
+
+@font-face {
+  font-family: EYInterstate-Regular;
+  src: url(https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Regular.eot);
+  src: url(.https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/EYInterstate-Regular.woff) format("woff"), url(../fonts/EYInterstate-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: EYInterstate-Light;
+  src: url(https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Light.eot);
+  src: url(https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/EYInterstate-Light.woff) format("woff"), url(../fonts/EYInterstate-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: EYInterstate-Bold;
+  src: url(https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Bold.eot);
+  src: url(https://sites.ey.com/sites/SC_SmartMaps/SiteAssets/smartmaps-site/assets/fonts/EYInterstate-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/EYInterstate-Bold.woff) format("woff"), url(../fonts/EYInterstate-Bold.ttf) format("truetype");
+}
+
+#mkpMainWrapper {
+
+  // ul, ol, li {
+  //   margin:0;
+  //   padding:0; 
+  // }
+
+  .mkp__main-header {
+    color: $white;
+    font-family: EYInterstate-Regular;
+    @include fontSize(30px);
+    letter-spacing: 2px;
+    position: relative;
+    padding-left: 12px;
+    @include mq($from: tablet) { 
+      @include fontSize(42px);     
+        position: absolute;
+        top: 5%;
+        left: 20%;
+        text-shadow: 1px -1px 2px $eyGrayDark;
+        padding: 0;
+    }
+    @include mq($from: desktop) { 
+        left: 5%;
+    }
+    @include mq($from: desktopXL) { 
+        @include fontSize(55px);
+    }
+
+  }
+
+  .mkp__content-heading {
+    color: $eyOffBlack;
+    font-family: EYInterstate-Light;
+    @include fontSize(20px);
+    font-weight: 300;
+    margin: 0 0 20px 0;
+
+    @include mq($from: tablet) {      
+      @include fontSize(30px);
+      margin: 0 0 30px 0;
+    }
+
+    @include mq($from: desktopWide) {      
+      margin: 0 0 40px 0;
+    }
+    @include mq($from: desktopXL) {      
+      @include fontSize(36px);
+    }
+
+    &--light {
+      @extend .mkp__content-heading;
+      color: $eyGrayLight;
+    }
+  }
+
+  p {
+    display: block;
+  }
+
+  .mkp__content-para {
+    color: $eyOffBlack;
+    @include fontSize(16px);
+    display: block;
+    margin: 0;
+      &--light {
+      @extend .mkp__content-para;
+      color: $eyGrayLight;
+    }
+    @include mq($from: desktopXL) { 
+        @include fontSize(20px);
+    }
+  }
+
+  a {
+    
+  }
+
+  .mkp__content-link {
+    color: $eyYellow;
+    @include fontSize(16px);
+    display:inline-block;
+    text-decoration: none;
+    @include mq($from: desktopXL) { 
+        @include fontSize(20px);
+    }
+    &--larger {
+      @extend .mkp__content-link;
+      border: 1px solid $eyYellow;
+      padding: 5px 10px;
+      margin: 2% 0;
+
+      @include mq($from: desktop) { 
+        margin: 2% 0 0 0;
+      }
+    }
+  }
+}

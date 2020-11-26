@@ -1,0 +1,52 @@
+<div class="mkp__search-results-page" ng-controller="searchCtrl">
+    <h1>Policies and Guidelines</h1>
+
+    <div class="mkp__search-results-box-wrapper">
+        <input  id="mkp_search-btn" type="button" class="button mkp_search-btn" title="Open search function">
+           
+        <input id="search-input" value="" ng-model="selected" type="text" maxlength="2048" class="mkp__nav-search-query ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched mkp_slide-hide-search-input" placeholder="Search UK&I Mercury Connections..." uib-typeahead="state for state in smDocDataArrNoDup | filter:$viewValue | orderBy:orderByStartsWith($viewValue) | limitTo:10" ng-keyup="initFocus()" ng-keydown="$event.keyCode === 13 &amp;&amp; getSearchResults()" focus-me="selected" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-3-6672">
+
+        <input id="mkp_close-search-btn" type="button" class="button mkp_close-search-btn" value="X" title="Clear search">
+    </div>
+
+    <!-- <div class="mkp__search-results-message-cont">
+        <p ng-if="searchKeyowrd !== ''">87 results containing: {{searchedKeyword}}</p>
+    </div> -->
+
+    <!-- <div class="mkp__search-results-cont">
+        <h2>How tos</h2>
+        <ul>
+            <li>
+                <h3><a href="SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/how-to-{howToTitle}">How to: Create opportunity</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+            <li>
+                <h3><a href="#">How to: Update opportunity</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit praesentium minus cupiditate asperiores autem sunt necessitatibus quod perspiciatis deleniti quia.</p>
+            </li>
+        </ul>
+    </div> -->
+    <div class="mkp__search-results-cont">
+        <h2>Guidance</h2>
+        <ul>
+            <li>
+                <h3><a href="#">Create opportunity guidance</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mkp__search-results-cont">
+        <h2>Policy</h2>
+        <ul>
+            <li>
+                <h3><a href="#">Create opportunity policy</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+        </ul>
+    </div>
+    <a class="mkp__pagination" href="#">
+        <i class="fa fa-long-arrow-right"></i>
+        Next page
+        <br>1 of 10
+    </a>
+</div>       

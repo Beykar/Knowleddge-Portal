@@ -1,0 +1,105 @@
+<style type="text/css">
+	#eymain .panel-default .panel-heading .panel-title a, #eymain .panel-primary .panel-heading .panel-title a, #eymain .panel-danger .panel-heading .panel-title a, #eymain .panel-success .panel-heading .panel-title a, #eymain .panel-warning .panel-heading .panel-title a, #eymain .panel-info .panel-heading .panel-title a {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-weight: normal;
+    color: #fff;
+}
+#eymain .panel-default .panel-heading .panel-title a:after, #eymain .panel-primary .panel-heading .panel-title a:after, #eymain .panel-danger .panel-heading .panel-title a:after, #eymain .panel-success .panel-heading .panel-title a:after, #eymain .panel-warning .panel-heading .panel-title a:after, #eymain .panel-info .panel-heading .panel-title a:after {
+    display: block;
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f106';
+    font-size: 1.2em;
+    color: #fff;
+    top: 50%;
+    right: 11px;
+    margin-top: -8px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#eymain{
+    background-size: cover;
+    height: 100%;
+    min-height: 900px;
+    background-repeat: no-repeat;
+    background-position: center;
+   /* background-image: url(https://share.ey.net/sites/Mercury_UKandIreland/SiteAssets/v2/assets/img/bgHome.jpg);*/
+       background: darkgrey !important;
+}
+#eymain .mainBox, #eymain .sideBox {
+    opacity: .95;
+    background: #fff;
+}
+#eymain .panel-primary .panel-heading {
+    background: #000000;
+    border-bottom-color: #000000;
+}
+#eymain .panel-default .panel-heading .panel-title a.collapsed:after, #eymain .panel-primary .panel-heading .panel-title a.collapsed:after, #eymain .panel-danger .panel-heading .panel-title a.collapsed:after, #eymain .panel-success .panel-heading .panel-title a.collapsed:after, #eymain .panel-warning .panel-heading .panel-title a.collapsed:after, #eymain .panel-info .panel-heading .panel-title a.collapsed:after {
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+ #eymain input.ng-invalid, #eymain textarea.ng-invalid {
+    background-color: #f7eb62;
+}
+#eymain .btn-secondary.disabled, #eymain .btn-secondary:disabled {
+    background-color: #ffe600;
+    border-color: #ffe600;
+    color:#000;
+}
+#eymain .btn.disabled, #eymain .btn:disabled {
+    opacity: .65;
+}
+#eymain button, #eymain html [type="button"], #eymain [type="reset"], #eymain [type="submit"] {
+    -webkit-appearance: button;
+}
+#eymain .btn-secondary {
+    color: #fff;
+    background-color: #ffe600;
+    border-color: #ffe600;
+     color:#000;
+}
+</style>
+<script type="text/javascript"></script>
+<div class="container-fluid home_page no-pad" ng-controller="SupportCtrl">
+<section>
+    <div class="row">
+        <div class="container mt-4 mb-4 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-8 pt-4 pb-4 mainBox">
+
+                    	<h4>Contact us</h4>
+                      <p>If you have any questions about your <span class="font-weight-bold">Better Engagements and Mercury learning</span>, email <a href="mailto:mylearning.uki@xe04.ey.com">mylearning.uki@xe04.ey.com</a>.</p>  
+                      <p>If you have any questions about the <span class="font-weight-bold">Better Engagements</span> transformation programme, email <a href="mailto:betterengagements@uk.ey.com" target="_blank"> betterengagements@uk.ey.com</a></p>
+                      <p>You can also complete the below form and someone from the Mercury Programme team will respond within 48 hours. </p>                      
+                      <form name="form1">
+                        <div class="form-group"> <label for="InputName">Name</label>
+                          <input type="text" class="form-control" id="InputName"  required ng-model="user.fullname"> </div>
+                          <div class="form-group"> <label for="InputEmail1">Email address</label>
+                              <input type="email" class="form-control" id="InputEmail1" ng-model="user.email"  required> </div>
+                              <div class="form-group"> <label for="Textarea">Message</label> <textarea class="form-control" id="Textarea" rows="3"  required ng-model="user.userQuery"></textarea> </div>
+                              
+                              <input type="submit" class="btn btn-secondary" ng-click="submitForm(user)" ng-disabled="!form1.$valid" value="Submit" />
+                              
+                          </form>
+                          <h4 class="mt-4 mb-3">Global Mercury Deployment</h4>
+                      <p>To learn more about the impact of the Global Mercury deployment, please visit: <a href="https://sites.ey.com/sites/moving2mercury/SitePages/Community Home.aspx" target="_blank">https://sites.ey.com/sites/moving2mercury/SitePages/Community Home.aspx</a></p>
+
+<!-- placeholder="{{currentuserFullaname}}" placeholder="{{currentuserEmail}}" -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+

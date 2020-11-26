@@ -1,0 +1,68 @@
+section.dash {
+    padding: 0px;
+    margin: 0 0 5% 0;
+    display: block;
+    float: left;
+    background-color: transparent;
+    
+    @extend %clearfix;
+}
+
+#smMainWrapper {
+    .sm_dash {
+        width: 100%;
+        margin: 0px;
+        height: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        @extend %clearfix;
+
+        &--wrap {
+            width: 100%;
+            display: block;
+            background-color: $dash-background;
+            max-width: 100%;
+            padding: 20px;
+
+            @include mq($from: tablet) {  
+                display: flex;
+                padding: 0px;
+            }
+        }
+
+        &--column {
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            max-width: 100%;
+            
+            &.menu {
+                background-color: $dash-background-dark;
+                flex-shrink: 0;
+                max-width: 100%;
+                display: block;
+
+                @include mq($from: tablet) {
+                    display: flex;
+                    max-width: 120px;
+                }
+            }
+    
+            &.data {
+                background-color: $dash-background;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.graph-wrap {
+    background-color: $dash-background-dark;
+    padding: 20px;
+}

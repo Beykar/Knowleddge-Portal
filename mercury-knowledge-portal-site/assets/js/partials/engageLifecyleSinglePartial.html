@@ -1,0 +1,110 @@
+<div class="mkp__level2" ng-controller="engagementSingleCtrl" ng-model="tileTitle" ng-cloak xxng-init="getData(selectedBusinessUnit,selectedServiceLine)">
+	<div class="mkp__personalisation-bar" ng-if="loggedIn">
+		<div class="mkp__personalisation-inner">	 
+			<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+			<span class="mkp__salutation">Hello</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+			<fieldset enable-button>
+				<label for="mkp__select-business-unit">We're displaying content relevant to you. Currently displaying </label>
+				<select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+					<option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == currentUser.businessUnit" value="{{businessUnit}}">{{businessUnit}}</option>
+				</select>
+	
+				<label for="mkp__select-service-line">and </label>
+				<select id="mkp__select-service-line" ng-model="selectedServiceLine">
+					<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+				</select>
+
+				<button id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+			</fieldset>
+		</div>
+	</div>
+	<div class="mkp__personalisation-bar" ng-if="!loggedIn">
+		<div class="mkp__personalisation-inner">	 
+			<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+			<span class="mkp__salutation">Hello</span> 
+			<fieldset enable-button>
+				<label for="mkp__select-business-unit">Select a Business Unit and a Service Line. Currently displaying </label>
+				<select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+					<option ng-repeat="businessUnit in businessUnitArr" value="{{businessUnit}}" >{{businessUnit}}</option>
+				</select>
+	
+				<label for="mkp__select-service-line">and </label>
+				<select id="mkp__select-service-line" ng-model="selectedServiceLine">
+					<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+				</select>
+	
+				<button  id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+			</fieldset>
+		</div>
+	</div>
+	<ul class="mkp__breadcrumb">
+		<li><a href="#" ng-click="goToHomePage(selectedBusinessUnit,selectedServiceLine)">ENGAGEMENT LIFECYCLE</a> </li>
+		<li><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}"><i class="fa fa-chevron-right"></i> <strong>{{tileTitle}}</strong></a></li>
+	</ul>
+	<section class="mkp__level2-section-intro">
+		<h1 class="mkp__icon-header"><img src="{{tileImage}}" alt="#"><strong>{{tileTitle}}</strong></h1>
+	</section>
+	<div class="mkp__level2-section-content-outer">
+		<div class="mkp__level2-section-content-1">
+			<div class="mkp__stand-first-para ng-binding" ng-bind-html="$sce.trustAsHtml(tileFullDescription)"></div>
+			<section ng-show="levelTwoChapteringArr.length > 0" class="mkp__level2-section-content">
+				<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/list-of-contents-icon.svg" alt="#">List of contents</h2>
+				<div class="mkp__master-accordion-switch">
+					<a href="#" data-open="false" ng-click="openAll()">{{action}}</a>
+				</div>
+
+				<div class="mkp__accordion" ng-repeat="accordion in levelTwoChapteringArr" >
+					<div ng-click="openTab($index, accordion.Heading)">
+						<h3 class="mkp__accordion-header">{{accordion.Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="" data-open="false">
+							<i ng-show="isOpenTab($index, accordion.Heading)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab($index, accordion.Heading)"class="fa fa-chevron-right"></i></i>
+						</a>
+					</div>
+					<ul class="mkp__triangle-bullet-points ng-hide"  ng-show="isOpenTab($index, accordion.Heading)">
+						<li ng-repeat="howToDoc in accordion.Content"><a ng-click="updateParamObj(howToDoc.Title)" href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/how-to-{{howToDoc.Title}}"><span>{{howToDoc.Heading}}</span></a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+		<div class="mkp__level2-section-content-2">
+			<aside>
+				<div class="mkp__list-wrapper">
+					<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/policy-icon.svg" alt="#">Policy and Guidance</h2>
+					<ul class="mkp__triangle-bullet-points">
+						<li ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'BusinessUnit': objData.busUn, 'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'BusinessUnit': objData.busUn}:true"><a href="SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'ServiceLine': objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter:{'ELS': objData.els}"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+						<li ng-if="!allContent" ng-repeat="policyAll in filteredPolicyDataAll"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyAll.Title}}">{{policyAll.Heading}}</a></li>
+					</ul>
+					<h3 ng-if="filteredPolicyDataCustom.length == 0 && filteredPolicyDataAll.length == 0">No results found</h3>
+				</div>
+		
+				<div class="mkp__list-wrapper">
+					<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/guidance-icon.svg" alt="#">Business Guidelines and FAQs</h2>
+					<ul class="mkp__triangle-bullet-points">
+						<li ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'BusinessUnit': objData.busUn, 'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'BusinessUnit': objData.busUn}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+						<li ng-if="!allContent" ng-repeat="guidanceAll in filteredGuidanceDataAll"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceAll.Title}}">{{guidanceAll.Heading}}</a></li>
+					</ul>
+					<h3 ng-if="filteredGuidanceDataCustom.length == 0 && filteredGuidanceDataAll.length == 0">No results found</h3>
+				</div>
+		
+				<div class="mkp__list-wrapper">
+					<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/training-icon.svg" alt="#">Related Resources</h2>
+					<ul class="mkp__triangle-bullet-points">
+						<li  ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID, 'Related_x0020_Business_x0020_Uni': objData.busUn, 'Related_x0020_Service_x0020_Line':objData.servLine}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li  ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID, 'Related_x0020_Business_x0020_Uni': objData.busUn}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li  ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID, 'Related_x0020_Service_x0020_Line':objData.servLine}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li ng-if="!allContent" ng-repeat="resourceAll in filteredResourceDataAll | filter: {'Related_x0020_ELS_x0020_TagId': elsID}:true"><a href="{{resourceAll.URL}}" target="_blank">{{resourceAll.Title}}</a></li>
+					</ul>
+					<h3 ng-if="filteredResourceDataCustom.length == 0 && filteredResourceDataAll.length == 0">No results found</h3>
+				</div>
+			</aside>
+		</div>
+	</div>
+	
+</div>

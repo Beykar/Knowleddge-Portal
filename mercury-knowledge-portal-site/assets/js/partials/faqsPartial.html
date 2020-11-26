@@ -1,0 +1,313 @@
+<style type="text/css">
+	#eymain .panel-default .panel-heading .panel-title a, #eymain .panel-primary .panel-heading .panel-title a, #eymain .panel-danger .panel-heading .panel-title a, #eymain .panel-success .panel-heading .panel-title a, #eymain .panel-warning .panel-heading .panel-title a, #eymain .panel-info .panel-heading .panel-title a {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-weight: normal;
+    color: #040404; 
+    cursor: pointer;
+}
+
+#eymain .panel-default .panel-heading .panel-title a:after, #eymain .panel-primary .panel-heading .panel-title a:after, #eymain .panel-danger .panel-heading .panel-title a:after, #eymain .panel-success .panel-heading .panel-title a:after, #eymain .panel-warning .panel-heading .panel-title a:after, #eymain .panel-info .panel-heading .panel-title a:after {
+    display: block;
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f106';
+    font-size: 1.2em;
+    color: #000;
+    top: 50%;
+    right: 11px;
+    margin-top: -8px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#eymain{
+    background-size: cover;
+    height: 100%;
+    min-height: 900px;
+    background-repeat: no-repeat;
+    background-position: center;
+   /* background-image: url(https://share.ey.net/sites/Mercury_UKandIreland/SiteAssets/v2/assets/img/bgHome.jpg);*/
+       background: darkgrey !important;
+}
+#eymain .mainBox, #eymain .sideBox {
+    opacity: .95;
+    background: #fff;
+}
+#eymain .panel-primary .panel-heading {
+    background: #ffd200;
+    border-bottom-color: #ffd200;
+    color: #fff;font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif !important; font-size:18px !important;
+}
+
+#eymain .panel-primary .panel-heading h6 a{
+    color: #fff;font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif !important; font-size:18px !important;
+    padding-right: 20px;
+}
+#eymain .panel-default .panel-heading .panel-title a.collapsed:after, #eymain .panel-primary .panel-heading .panel-title a.collapsed:after, #eymain .panel-danger .panel-heading .panel-title a.collapsed:after, #eymain .panel-success .panel-heading .panel-title a.collapsed:after, #eymain .panel-warning .panel-heading .panel-title a.collapsed:after, #eymain .panel-info .panel-heading .panel-title a.collapsed:after {
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+ #rowcommentbox .col-md-12:nth-child(even) {background: #CCC} #rowcommentbox .col-md-12:nth-child(odd) {background: #FFF}
+ #eymain #rowcommentbox a {
+    color: #000000;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none !important;
+}
+#eymain .panel-body{
+        margin-bottom: 1em;
+        color: black;
+}
+#eymain .line {
+    height: 1px;
+    background: #ccc;
+}
+#eymain h5{
+    cursor: pointer;
+}
+#eymain .badge-light {
+    color: #111;
+    background-color: #fbd009;
+    margin-left: 10px;
+}
+
+#eymain ul li {
+       font-size:16px !important;
+       line-height:1.6em !important;
+       margin-left: 30px !important;
+
+}
+
+</style>
+<script type="text/javascript"></script>
+
+
+<div id="eymain" class="container-fluid home_page no-pad" ng-controller="faqsCtrl">
+<section>
+    <div class="row">
+        <div class="container mt-4 mb-4 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 pt-4 pb-4 mainBox">
+                    <h4 class="">FAQs</h4>
+                    <div class="line mb-4"></div>
+                        
+                    	
+                        <h5 class="mt-4"  ng-init="bettercollapsed=true" ng-model="bettercollapsed" ng-click="bettercollapsed=!bettercollapsed">Better Engagements: run by you, powered by Mercury</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="bettercollapsed" class="panel-group" id="collapse-panel02">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Better Engagements: Powered by Mercury'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel02"  data-target="#collapse2{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse2{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+                        <h5 class="mt-4" ng-model="whycollapsed" ng-click="whycollapsed=!whycollapsed">Why Mercury?</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="whycollapsed" class="panel-group" id="collapse-panel03">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Why Mercury?'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel03"  data-target="#collapse3{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse3{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+                        <h5 class="mt-4" ng-model="systemcollapsed" ng-click="systemcollapsed=!systemcollapsed" >Mercury system and deployment</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="systemcollapsed" class="panel-group" id="collapse-panel04">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Mercury system and deployment'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel04"  data-target="#collapse4{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse4{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+                        <h5 class="mt-4"  ng-model="Netcollapsed" ng-click="Netcollapsed=!Netcollapsed">The Better Engagements Change Network</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="Netcollapsed" class="panel-group" id="collapse-panel05">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Category 4'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel05"  data-target="#collapse5{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse5{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+
+                        <h5 class="mt-4"  ng-model="cyclecollapsed" ng-click="cyclecollapsed=!cyclecollapsed">Opportunity and Engagement Lifecycle and new ways of working in Mercury</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="cyclecollapsed" class="panel-group" id="collapse-panel06">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Engagement Lifecycle and New Ways of Working'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel06"  data-target="#collapse6{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse6{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+
+                        <h5 class="mt-4" ng-model="managementcollapsed" ng-click="managementcollapsed=!managementcollapsed">Contact Management and Opportunity Creation</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="managementcollapsed" class="panel-group" id="collapse-panel07">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Contact and Opportunity Management'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel07"  data-target="#collapse7{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse7{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+
+                        <h5 class="mt-4" ng-model="pricemanagementcollapsed" ng-click="pricemanagementcollapsed=!pricemanagementcollapsed">Pricing with Better Engagements and Mercury </h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="pricemanagementcollapsed" class="panel-group" id="collapse-panel08">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Pricing with Better Engagements and Mercury'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel08"  data-target="#collapse8{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse8{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+                        <h5 class="mt-4" ng-model="beemcollapsed" ng-click="beemcollapsed=!beemcollapsed">Introduction to Budgeting, Engagement Economics and Maintenance </h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="beemcollapsed" class="panel-group" id="collapse-panel09">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Introduction to Budgeting, Engagement Economics and Maintenance'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel09"  data-target="#collapse9{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse9{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+                        <h5 class="mt-4" ng-model="billreportcollapsed" ng-click="billreportcollapsed=!billreportcollapsed">Billing and Reporting in Mercury</h5>
+                        <div class="line mb-4"></div>
+                        <div ng-show="billreportcollapsed" class="panel-group" id="collapse-panel10">
+
+                            <div class="panel panel-primary"  ng-repeat="faq in faqs" ng-if="faq.cat == 'Billing and Reporting in Mercury'">
+
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#collapse-panel10"  data-target="#collapse10{{faq.ID}}" class="collapsed" aria-expanded="false">
+                                                {{faq.Title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse10{{faq.ID}}" class="panel-collapse collapse" aria-expanded="false">
+                                        <div class="panel-body" ng-bind-html="renderHtml(faq.Answer)">
+                                            
+                                        </div>
+                                    </div>
+
+                            </div>                          
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+                 
+
+<!-- <div  ng-repeat="faq in faqs">
+{{faq.Title}}
+</div>
+</div> -->
+
+

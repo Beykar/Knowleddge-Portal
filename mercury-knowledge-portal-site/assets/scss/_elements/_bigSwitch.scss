@@ -1,0 +1,77 @@
+.infoDivContent{
+    padding-left: 20px;  
+}
+
+#eymain .panel-default .panel-heading .panel-title a, #eymain .panel-primary .panel-heading .panel-title a, #eymain .panel-danger .panel-heading .panel-title a, #eymain .panel-success .panel-heading .panel-title a, #eymain .panel-warning .panel-heading .panel-title a, #eymain .panel-info .panel-heading .panel-title a {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-weight: normal;
+    color: #040404; 
+    cursor: pointer;
+}
+
+#eymain .panel-default .panel-heading .panel-title a:after, #eymain .panel-primary .panel-heading .panel-title a:after, #eymain .panel-danger .panel-heading .panel-title a:after, #eymain .panel-success .panel-heading .panel-title a:after, #eymain .panel-warning .panel-heading .panel-title a:after, #eymain .panel-info .panel-heading .panel-title a:after {
+    display: block;
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f106';
+    font-size: 1.2em;
+    color: #000;
+    top: 50%;
+    right: 11px;
+    margin-top: -8px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#eymain{
+    background-size: cover;
+    height: 100%;
+    min-height: 900px;
+    background-repeat: no-repeat;
+    background-position: center;
+   /* background-image: url(https://share.ey.net/sites/Mercury_UKandIreland/SiteAssets/v2/assets/img/bgHome.jpg);*/
+       background: darkgrey !important;
+}
+#eymain .mainBox, #eymain .sideBox {
+    opacity: .95;
+    background: #fff;
+}
+#eymain .panel-primary .panel-heading {
+    background: #ffd200;
+    border-bottom-color: #ffd200;
+}
+#eymain .panel-default .panel-heading .panel-title a.collapsed:after, #eymain .panel-primary .panel-heading .panel-title a.collapsed:after, #eymain .panel-danger .panel-heading .panel-title a.collapsed:after, #eymain .panel-success .panel-heading .panel-title a.collapsed:after, #eymain .panel-warning .panel-heading .panel-title a.collapsed:after, #eymain .panel-info .panel-heading .panel-title a.collapsed:after {
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+ #rowcommentbox .col-md-12:nth-child(even) {background: #CCC} #rowcommentbox .col-md-12:nth-child(odd) {background: #FFF}
+ #eymain #rowcommentbox a {
+    color: #000000;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none !important;
+}
+#eymain .panel-body{
+        margin-bottom: 1em;
+        color: black;
+}
+#eymain .line {
+    height: 1px;
+    background: #ccc;
+}
+#eymain h5{
+    cursor: pointer;
+}
+#eymain .badge-light {
+    color: #111;
+    background-color: #fbd009;
+    margin-left: 10px;
+}

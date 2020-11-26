@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="27" cy="27" r="27"></circle>
+        <filter x="-11.1%" y="-11.1%" width="122.2%" height="122.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M26.943952,13 L9.44694972,30.3142902 C8.85101676,30.8991764 8.85101676,31.8479127 9.44694972,32.4333915 L21.8039548,44.5613354 C22.3998877,45.1462215 23.3665429,45.1462215 23.9630797,44.5613354 L41,27.3880815 L41,13 L26.943952,13 Z M34.9621787,21.2962579 C33.628424,21.2962579 32.5470502,20.2349295 32.5470502,18.9258985 C32.5470502,17.6168675 33.628424,16.5555391 34.9621787,16.5555391 C36.2959334,16.5555391 37.3773072,17.6168675 37.3773072,18.9258985 C37.3773072,20.2349295 36.2959334,21.2962579 34.9621787,21.2962579 Z" id="path-3"></path>
+        <filter x="-9.4%" y="-9.4%" width="118.8%" height="118.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0392156863   0 0 0 0 0.121568627   0 0 0 0 0.266666667  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="DESIGN--v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-181.000000, -23.000000)">
+            <g id="Group-2" transform="translate(185.000000, 27.000000)">
+                <g id="Group-12">
+                    <g id="Group-8">
+                        <g id="Oval">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#EDEDED" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+                <g id="Shape" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-3"></use>
+                </g>
+                <path d="M35,14 C32.23875,14 30,16.23875 30,19 C30,21.76125 32.23875,24 35,24 C37.76125,24 40,21.76125 40,19 C40,16.23875 37.76125,14 35,14 Z M35,21.5 C33.619375,21.5 32.5,20.380625 32.5,19 C32.5,17.619375 33.619375,16.5 35,16.5 C36.380625,16.5 37.5,17.619375 37.5,19 C37.5,20.380625 36.380625,21.5 35,21.5 Z" id="Shape" fill="#DBDBDB" fill-rule="nonzero"></path>
+                <path d="M34.6251367,20 C34.4651417,20 34.3051467,19.938751 34.1832755,19.8168779 C33.9389082,19.5725067 33.9389082,19.1775129 34.1832755,18.9331417 L42.9330021,10.1832784 C43.1773695,9.9389072 43.5723571,9.9389072 43.8167245,10.1832784 C44.0610918,10.4276496 44.0610918,10.8226434 43.8167245,11.0670146 L35.0669979,19.8168779 C34.9451267,19.938751 34.7851317,20 34.6251367,20 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <text id="£" transform="translate(23.374357, 30.481766) rotate(43.000000) translate(-23.374357, -30.481766) " font-family="EYInterstate-Light, EYInterstate" font-size="18" font-weight="300" fill="#DBDBDB">
+                    <tspan x="17.7950035" y="36.9817659">£</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

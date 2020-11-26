@@ -1,0 +1,84 @@
+/***** Search Dropdown Component *****/
+
+// Animate the dropdown autocomplete menu into view
+@keyframes liTagsInserted {  
+  from { 
+    opacity: 0;
+    padding-top:0;
+    padding-bottom:0; 
+  }
+  to { 
+    opacity: 1;
+    padding-top:25px;
+    padding-bottom:25px; 
+  }  
+}
+
+
+
+#mkpMainWrapper{
+  ul.ng-isolate-scope {
+      z-index: 100;
+      max-width: 97.5%;
+      position: absolute !important;
+      top: 99%;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      font-family: inherit !important;
+      list-style: none;    
+  
+      li.uib-typeahead-match {
+        max-width: 180%;
+        background-color: $eyOffBlack;
+        color: $white;
+        font-family: "EYInterstate", sans-serif;
+        @include fontSize(13px);
+        font-size: 1rem;
+        line-height: 14px;
+        border: none;
+        border-bottom:1px solid $white;
+        padding: 25px 5px 25px 30px;
+        animation-duration: 0.2s;
+        animation-name: liTagsInserted;
+      }
+      
+      li.uib-typeahead-match:hover {
+        background-color: eyGrayLight;
+        color:$white;
+      }
+      
+      li.uib-typeahead-match a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $white;
+      }
+      li.uib-typeahead-match a:hover {
+        color: $white;
+        background-color: $eyOffBlack;
+      }
+    }
+    
+    [uib-typeahead-popup].dropdown-menu {
+      width: 36%;
+      max-width: 691px;
+      position: absolute;
+      top:32%;
+      left:36%;
+      z-index:9999;
+    }
+
+    .sm__nav-search-query{
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: height 0.3s ease-out,-webkit-transform 0.4s;
+      transition: height 0.3s ease-out,-webkit-transform 0.4s;
+      transition: transform 0.4s,height 0.3s ease-out;
+      transition: transform 0.4s,height 0.3s ease-out,-webkit-transform 0.4s;
+      border-radius: 0;
+      &:hover,
+      &:focus {
+        outline: 0;
+      }
+    }
+}

@@ -1,0 +1,95 @@
+.be-new__home-main-container{
+    margin-top: -4%;
+    padding:0 2.5%;
+
+    .be-new__home-header-row{
+        background-color: $mkpOffBlack;
+        color: $white;
+    }
+
+    .be-new__home-header-content-heading{
+        color:$white !important;
+        width: 82%;
+
+        & h1{
+            color:$white !important;
+            text-transform: capitalize;
+            font-size: 60px !important;
+        }
+    }
+
+    .be-new__home-dash-border{
+        border-top:2px dashed;
+        margin-top: -2.5%;
+        width: 80%;
+    }
+   
+    .be-new__home-content-para{
+        color:$white !important;
+        margin: 3% 0;
+        font-size: 24px !important;
+        line-height: 1.25;
+        font-weight: 300;
+    }
+
+    .be-new__home-para {
+        color: $black;
+        a {
+            color: $black;
+            text-decoration: underline;
+            :visited {
+                color: $black;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mkp__list-wrapper{
+            padding: 22px 20px;
+            box-shadow: 0 0 10px 0 rgba(10, 31, 68, 0.1);
+            margin-bottom: 19px;
+    }        
+    
+
+    .be-new__home-intro-left, .be-new__home-middle-row-left-content{
+        padding-left:0 !important;
+        & h1{
+            margin-top:0;
+        }
+    }
+
+    .be-new__home-intro-right, .be-new__home-middle-row-right-content{
+        padding-right:0 !important;
+    }
+
+    .be-new__home-icon{
+        position:relative !important;
+        top: -3px !important;
+        left: -13px !important;
+    }
+
+    .be-new__home-big-switch, .be-new__home-my-learning{
+        height: 46.7%;
+    }
+
+    .be-new__home-virtual-clinic{
+        height:90%;
+    }
+
+    .be-new__home-blog-content:first-child{
+        padding-left: 0;
+    }
+
+    .be-new__home-blog-content:last-child{
+        padding-right: 0;
+    }
+
+    .be-new__home-blog-content:nth-child(2){
+        padding: 0;
+    }
+    .be-new__home-header-content-image img{
+        position:absolute;
+        bottom:0;
+        right:1%;
+    }
+}

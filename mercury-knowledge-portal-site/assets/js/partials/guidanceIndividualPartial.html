@@ -1,0 +1,349 @@
+<div class="mkp__level2 mkp__level3 mkp__level3-policy" ng-controller="guidanceCtrl" ng-cloak ng-init="getData(selectedBusinessUnit,selectedServiceLine)">
+		<div class="mkp__personalisation-bar" ng-if="loggedIn">
+				<div class="mkp__personalisation-inner">	 
+					<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+					<span class="mkp__salutation">Hello</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+					<fieldset enable-button>
+						<label for="mkp__select-business-unit">We're displaying content relevant to you. Currently displaying </label>
+						<select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+							<option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == currentUser.businessUnit" value="{{businessUnit}}">{{businessUnit}}</option>
+						</select>
+			
+						<label for="mkp__select-service-line">and </label>
+						<select id="mkp__select-service-line" ng-model="selectedServiceLine">
+							<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+						</select>
+
+						<button id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+					</fieldset>
+				</div>
+			</div>
+			<div class="mkp__personalisation-bar" ng-if="!loggedIn">
+				<div class="mkp__personalisation-inner">	 
+					<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+					<span class="mkp__salutation">Hello</span> 
+					<fieldset enable-button>
+						<label for="mkp__select-business-unit">Select a Business Unit and a Service Line. Currently displaying </label>
+						<select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+							<option ng-repeat="businessUnit in businessUnitArr" value="{{businessUnit}}" >{{businessUnit}}</option>
+						</select>
+			
+						<label for="mkp__select-service-line">and </label>
+						<select id="mkp__select-service-line" ng-model="selectedServiceLine">
+							<option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+						</select>
+			
+						<button  id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+					</fieldset>
+				</div>
+			</div>
+	<ul class="mkp__breadcrumb">
+		<li><a href="urlSite/SitePages/index.aspx/task-support">ENGAGEMENT LIFECYCLE</a> </li>
+		<li><i class="fa fa-chevron-right"></i> <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{objData.busUn}}/{{objData.servLine}}">{{tileTitle}}</a> </li>
+		<li><i class="fa fa-chevron-right"></i> <strong>{{guidanceDataIndItem.Heading}}</strong></li> 
+	</ul>
+		
+	<section class="mkp__level2-section-intro">
+		<h1 class="mkp__icon-header"><img src="{{tileImage}}" alt="#">
+			<strong>{{guidanceDataIndItem.Heading}}</strong>
+		</h1>
+		<a href="#" ng-controller="shareThisCtrl" ng-click="shareThis({tileTitle})" class="mkp__share-article">
+			<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/how-to-page/share-icon.svg" alt="#">
+			Share this with a colleague
+		</a>
+	</section>
+	<div class="mkp__level2-section-content-outer">
+		<div class="mkp__level2-section-content-1">
+			<h2>Key Message</h2>
+			<div class="mkp__stand-first-para" ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.StandFirst)"></div>
+			<section ng-hide="nullData()" class="mkp__level2-section-content">
+				<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/list-of-contents-icon.svg" alt="#">List of contents</h2>
+
+				<div class="mkp__master-accordion-switch"><a href="#" data-open="false" ng-click="openAll()">{{action}}</a></div>
+
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step1Heading !== null">
+					<div ng-click="openTab(1)">
+						<h3 title="hide or show list" data-open="false">​​{{guidanceDataIndItem.Step1Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(1)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(1)"class="fa fa-chevron-right"></i>
+						</a>
+					</div>
+				<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(1)">
+					<div ng-show="guidanceDataIndItem.Step1ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop1)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages1.Url}}" alt="{{guidanceDataIndItem.Step1ContentImages1.Url}}">
+					<div ng-show="guidanceDataIndItem.Step1ContentBottom1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom1)">
+					</div>
+					<div ng-show="guidanceDataIndItem.Step1ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop2)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages2.Url}}" alt="#">
+					<div ng-show="guidanceDataIndItem.Step1ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom2)">
+					</div>
+					<div ng-show="guidanceDataIndItem.Step1ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop3)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages3.Url}}" alt="#">
+					<div ng-show="guidanceDataIndItem.Step1ContentImages3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom3)">
+					</div>
+					<div ng-show="guidanceDataIndItem.Step1ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop4)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages4.Url}}" alt="#">
+					<div ng-show="guidanceDataIndItem.Step1ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom4)">
+					</div>
+					<div ng-show="guidanceDataIndItem.Step1ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop5)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages5.Url}}" alt="#">
+					<div ng-show="guidanceDataIndItem.Step1ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom5)">
+					</div>
+					<div ng-show="guidanceDataIndItem.Step1ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentTop6)">
+					</div>
+					<img ng-show="guidanceDataIndItem.Step1ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step1ContentImages6.Url}}" alt="#">
+					<div ng-show="guidanceDataIndItem.Step1ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step1ContentBottom6)">
+					</div>
+				</div>
+				</div>
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step2Heading !== null">
+					<div ng-click="openTab(2)">
+						<h3 title="hide or show list" data-open="false">​​{{guidanceDataIndItem.Step2Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(2)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(2)"class="fa fa-chevron-right"></i></a>
+					</div>
+					<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(2)">
+						<div ng-show="guidanceDataIndItem.Step2ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop1)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages1.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom1 != null" class="mkp__accordion-content--wording)"  ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom1)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step2ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop2)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages2.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom2)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step2ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop3)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages3.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom3)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step2ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop4)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages4.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom4)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step2ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop5)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages5.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom5)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step2ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentTop6)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step2ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step2ContentImages6.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step2ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab g-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step2ContentBottom6)">
+						</div>
+					</div>
+				</div>
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step3Heading !== null">
+					<div ng-click="openTab(3)">
+						<h3  title="hide or show list" data-open="false">​​{{guidanceDataIndItem.Step3Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(3)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(3)"class="fa fa-chevron-right"></i></a>
+					</div>
+					<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(3)">
+						<div ng-show="guidanceDataIndItem.Step3ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop1)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages1.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentBottom1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom1)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step3ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop2)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages2.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom2)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step3ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop3)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages3.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentImages3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom3)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step3ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop4)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages4.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom4)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step3ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop5)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages5.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom5)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step3ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentTop6)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step3ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step3ContentImages6.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step3ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step3ContentBottom6)">
+						</div>
+					</div>
+				</div>
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step4Heading !== null">
+					<div ng-click="openTab(4)">
+						<h3  title="hide or show list" data-open="false">​​{{guidanceDataIndItem.Step4Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(4)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(4)"class="fa fa-chevron-right"></i></a>
+					</div>
+					<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(4)">
+						<div ng-show="guidanceDataIndItem.Step4ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop1)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step4ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages1.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom1)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step4ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop2)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step4ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages2}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom2)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step4ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop3)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step4ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages3.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom3)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step4ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop4)">
+						</div>	
+						<img ng-show="guidanceDataIndItem.Step4ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages4.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom4)">
+						</div>
+						<div ng-show="guidanceDataIndItem.Step4ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop5)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step4ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages5.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom5)">
+						</div>	
+						<div ng-show="guidanceDataIndItem.Step4ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentTop6)">
+						</div>
+						<img ng-show="guidanceDataIndItem.Step4ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step4ContentImages6.Url}}" alt="#">
+						<div ng-show="guidanceDataIndItem.Step4ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step4ContentBottom6)">
+						</div>
+					</div>
+				</div> 
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step5Heading !== null">
+					<div ng-click="openTab(5)">
+						<h3  title="hide or show list" >​​{{guidanceDataIndItem.Step5Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(5)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(5)"class="fa fa-chevron-right"></i></a>
+					</div>
+					<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(5)">
+							<div ng-show="guidanceDataIndItem.Step5ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop1)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages1.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom1)">
+							</div>
+							<div ng-show="guidanceDataIndItem.Step5ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop2)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages2.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom2)">
+							</div>
+							<div ng-show="guidanceDataIndItem.Step5ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop3)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages3.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom3)">
+							</div>
+							<div ng-show="guidanceDataIndItem.Step5ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop4)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages4.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom4)">
+							</div>
+							<div ng-show="guidanceDataIndItem.Step5ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop5)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages5.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom5)">
+							</div>
+							<div ng-show="guidanceDataIndItem.Step5ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentTop6)">
+							</div>
+							<img ng-show="guidanceDataIndItem.Step5ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step5ContentImages6.Url}}" alt="#">
+							<div ng-show="guidanceDataIndItem.Step5ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step5ContentBottom6)">
+							</div>
+					</div>
+				</div>
+				<div class="mkp__accordion" ng-if="guidanceDataIndItem.Step6Heading !== null">
+					<div ng-click="openTab(6)">
+						<h3 title="hide or show list" data-open="false">​​{{guidanceDataIndItem.Step6Heading}}</h3>
+						<a href="#" class="mkp__accordion-switch" title="hide or show list" data-open="false"><i ng-show="isOpenTab(6)" class="fa fa-chevron-down"></i><i ng-hide="isOpenTab(6)"class="fa fa-chevron-right"></i></a>
+					</div>
+					<div class="mkp__accordion-content ng-hide" ng-show="isOpenTab(6)">
+								<div ng-show="guidanceDataIndItem.Step6ContentTop1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop1)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages1 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages1.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom1 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom1)">
+								</div>
+								<div ng-show="guidanceDataIndItem.Step6ContentTop2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop2)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages2 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages2.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom2 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom2)">
+								</div>
+								<div ng-show="guidanceDataIndItem.Step6ContentTop3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop3)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages3 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages3.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom3 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom3)">
+								</div>
+								<div ng-show="guidanceDataIndItem.Step6ContentTop4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop4)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages4 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages4.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom4 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom4)">
+								</div>
+								<div ng-show="guidanceDataIndItem.Step6ContentTop5 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop5)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages5 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages5.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom5" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom5)">
+								</div>
+								<div ng-show="guidanceDataIndItem.Step6ContentTop6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentTop6)">
+								</div>
+								<img ng-show="guidanceDataIndItem.Step6ContentImages6 != null" class="mkp__accordion-content--image" ng-src="{{guidanceDataIndItem.Step6ContentImages6.Url}}" alt="#">
+								<div ng-show="guidanceDataIndItem.Step6ContentBottom6 != null" class="mkp__accordion-contentwording" new-tab ng-bind-html="$sce.trustAsHtml(guidanceDataIndItem.Step6ContentBottom6)">
+								</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<div class="mkp__level2-section-content-2">
+			<aside>
+				<div class="mkp__list-wrapper">
+						<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/policy-icon.svg" alt="#">Policy and Guidance</h2>
+						<ul class="mkp__triangle-bullet-points">
+							<li ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'BusinessUnit': objData.busUn, 'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'BusinessUnit': objData.busUn}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'ServiceLine': objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom | filter: {'ELS': objData.els}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="policyCustom in filteredPolicyDataCustom"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyCustom.Title}}">{{policyCustom.Heading}}</a></li>
+							<li ng-if="!allContent" ng-repeat="policyAll in filteredPolicyDataAll"><a href="SitePages/Test-Index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/policy-{{policyAll.Title}}">{{policyAll.Heading}}</a></li>
+						</ul>
+						<h3 ng-if="filteredPolicyDataCustom.length == 0 && filteredPolicyDataAll.length == 0">No results found</h3>
+				</div>
+				<div class="mkp__list-wrapper">
+						<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/guidance-icon.svg" alt="#">Business Guidelines and FAQs</h2>
+						<ul class="mkp__triangle-bullet-points">
+							<li ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'BusinessUnit': objData.busUn, 'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'BusinessUnit': objData.busUn}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom | filter: {'ServiceLine':objData.servLine}:true"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+							<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="guidanceCustom in filteredGuidanceDataCustom"><a href="SitePages/Test-Index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceCustom.Title}}">{{guidanceCustom.Heading}}</a></li>
+							<li ng-if="!allContent" ng-repeat="guidanceAll in filteredGuidanceDataAll"><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/{{selectedBusinessUnit}}/{{selectedServiceLine}}/guidance-{{guidanceAll.Title}}">{{guidanceAll.Heading}}</a></li>
+						</ul>
+						<h3 ng-if="filteredGuidanceDataCustom.length == 0 && filteredGuidanceDataAll.length == 0">No results found</h3>
+				</div>
+				<div class="mkp__list-wrapper">
+					<h2 class="mkp__icon-header"><img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/contents-page/training-icon.svg" alt="#">Related Resources</h2>
+					<ul class="mkp__triangle-bullet-points">
+						<li  ng-if="objData.busUn != 'All' && objData.servLine != 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li  ng-if="objData.busUn != 'All' && objData.servLine == 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID, 'Related_x0020_Business_x0020_Uni': objData.busUn}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li  ng-if="objData.busUn == 'All' && objData.servLine != 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom | filter: {'Related_x0020_ELS_x0020_TagId': elsID, 'Related_x0020_Service_x0020_Line':objData.servLine}:true"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li ng-if="objData.busUn == 'All' && objData.servLine == 'All'" ng-repeat="resourceCustom in filteredResourceDataCustom"><a href="{{resourceCustom.URL}}" target="_blank">{{resourceCustom.Title}}</a></li>
+						<li ng-if="!allContent" ng-repeat="resourceAll in filteredResourceDataAll | filter: {'Related_x0020_ELS_x0020_TagId': elsID}:true"><a href="{{resourceAll.URL}}" target="_blank">{{resourceAll.Title}}</a></li>
+					</ul>
+					<h3 ng-if="filteredResourceDataCustom.length == 0 && filteredResourceDataAll.length == 0">No results found</h3>
+				</div>
+			</aside>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="mkp__footer_support">
+		<div class="mkp__footer_content">
+			<img src="urlSite/SiteAssets/mercury-knowledge-portal-site/assets/img/svg/how-to-page/support-icon.svg" alt="#">
+			<h2>
+				Do you require guidance or support? Contact Support
+				<i class="fa fa-chevron-right"></i>
+				<a href="https://sites.ey.com/sites/GlobalMercurySupport/UKI/SitePages/MercuryHomepage.aspx">UK&I</a> | 
+				<a href="https://sites.ey.com/sites/GlobalMercurySupport/ROI/SitePages/MercuryHomepage.aspx">ROI</a> | 
+				<a href="https://sites.ey.com/sites/GlobalMercurySupport/UKFS%20and%20Channel%20Islands/SitePages/MercuryHomepage.aspx">FSO</a>
+			</h2>
+		</div>
+	</div>
+</footer>

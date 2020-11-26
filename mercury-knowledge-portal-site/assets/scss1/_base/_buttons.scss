@@ -1,0 +1,13 @@
+.mkp_close-search-btn {
+	min-width: 25px;
+	width: 25px;
+	height: 25px;
+	border-radius: 12px;
+	line-height: 0;
+	color:$black;
+	padding: 0;
+	background-color:#ededed;
+	border-color: transparent;
+	font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+	@include fontSize(16px);
+}

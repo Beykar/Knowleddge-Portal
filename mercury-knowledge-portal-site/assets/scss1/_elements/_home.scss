@@ -1,0 +1,214 @@
+#mkpMainWrapper {
+  .mkp-home {
+    width: 100%;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 3% auto 0;
+    padding: 0 10px;
+    @include mq($from: desktop) {
+      padding: 0;
+    }
+
+    &__header {
+      margin-bottom: 33px;
+      padding: 15px;
+    }
+
+    &__info {
+      padding: 15px;
+      margin-bottom: 35px;
+						 
+    }
+
+    &__info-list {
+      margin-bottom: 10px;
+    }
+
+    &__tiles {
+      margin-bottom: 150px;
+    }
+
+    &__tile-list {
+	  @extend %clearfix;
+      display: block;
+      margin: 0 auto;
+      max-width: 219px;
+
+      @include mq($from: midMobile) {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        max-width: none;
+		padding: 0 15px;
+      }
+    }
+
+    &__tile-item {
+	  list-style-type: none;
+	  width: 15.88%;
+	  max-width: 225px;
+	  max-height: 255px;
+	  margin: 0 5px 14px 5px;
+									
+	  box-shadow: 0 0 4px 0 rgba(10, 31, 68, 0.12);
+	  position: relative;
+
+	  &:first-child,
+	  &:nth-child(7),
+	  &:nth-child(13) {
+		margin: 0 8px 16px 0;
+	  }
+
+	  &:hover {
+		//background-color: #c9c9c9;
+	  }
+
+	  @include mq($from: midMobile) {
+
+	  }
+	} 
+
+    &__tile-anchor {
+	  background-color: #c9c9c9;
+      display: block;
+      position: relative;
+      min-height: 240px;
+      border: 0;
+	  margin-top: 15px;
+      z-index: 2;
+	  cursor: pointer;					  
+    }
+
+    &__tile-border {
+      width: 100%;
+      height: 10px;
+      position: absolute;
+    }
+    &__tile-img {
+      display: block;
+      min-width: 100px;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -69px;
+    }
+
+    &__tile-title {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      min-height: 46px;
+      background-color: $mkpOffYellow;
+      width: 100%;
+      display: table;
+
+      span {
+        display: table-cell;
+        vertical-align: middle;
+        font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+        @include fontSize(16px);
+        line-height: 1.1;
+      }
+    }
+
+    &__tile-overlay {
+      opacity: 0;
+      background-color: $mkpOffBlack;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 40px 18px 6px;
+      transition: all 0.5s;
+
+      &--reveal-tile {
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      @extend .mkp_close-search-btn;
+      
+
+      &:hover {
+        background-color: $mkpOffYellow;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__overlay-text {
+      color: $white;
+      @include fontSize(12px);
+      line-height: 19px;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      min-height: 147px;
+    }
+
+    &__anchor-overlay {
+      color: $mkpOffYellow;
+      border: 1px solid $mkpOffYellow;
+      padding: 7px 12px;
+      min-width: 50%;
+      text-decoration: none;
+	  position: relative;
+      z-index: 3;
+
+      &:hover {
+        color: $mkpOffBlack;
+        text-decoration: none;
+        background-color: $mkpOffYellow;
+        cursor:pointer;
+      }
+    }
+	&__key-list {
+      width: 100%;
+      padding: 0 15px;
+      float: left; 
+      list-style: none;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      line-height: 19px;
+      @include fontSize(18px);
+
+      li {
+        float: left; 
+        margin: 30px 5px;
+      }
+
+      span {
+        border: 1px solid #ccc;
+        float: left;
+        width: 12px;
+        height: 12px;
+        margin: 2px;
+        -moz-border-radius: 30px; /* or 50% */
+        border-radius: 30px; /* or 50% */
+        margin-right: 10px;
+
+        &.orange {
+          background-color: #ee7602;
+        }
+        &.green {
+          background-color: #00A25D;
+        }
+        &.turquoise {
+          background-color: #3eb8c0
+        }  
+      }
+    }
+  }
+}

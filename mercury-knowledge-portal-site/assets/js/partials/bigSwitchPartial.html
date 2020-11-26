@@ -1,0 +1,95 @@
+<style>
+    #eymain .hero__section {
+        height: calc(80vh - 100px);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* margin-top: -70px; */
+    }
+    #eymain .col-innerwrap{
+       height: 100%;
+       border: 1px solid #a6a3a3;
+       padding-top: 10px;
+    }
+    #eymain .row-sections-media{
+       /*background: #f0f0f0;*/
+       color:#FFF;
+       margin-bottom: 15px;
+    }
+    #eymain .row-sections-media .media img{
+       max-width: 80px;
+    }
+    #eymain .info-v6-2 {
+       background: #494848;
+       min-height: 150px;
+   }
+   #eymain .info-v6-2 p{
+       color:#fff;
+   }
+   
+   #eymain .media-body{
+       flex:none;
+   }
+
+   #eymain .supportInfoDiv, #eymain .infoDivContent{
+    background: #515151;
+    color: #fff;
+   }
+
+   #eymain .infoDivContent img{
+       max-width:52px;
+       max-height:52px;
+   }
+
+   #eymain .carousel-control-prev,
+   #eymain .carousel-control-next {
+    cursor: pointer;
+   }
+
+  #eymain .carousel-caption {
+    width:100%;
+    right: 0;
+    left: 0;
+    bottom: 10%;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 10px;
+  }
+
+   #eymain .carousel-caption h2 a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+   #eymain .infoDivContent a{
+       text-decoration: none;
+       color: #ffffff;
+   }
+   #eymain .infoDivContent a:hover{
+       cursor: pointer;
+       color:#ffe600;
+   }
+
+    #eymain .bigswitch-cont p {
+       font-size:16px;
+   }
+
+   #eymain .bigswitch-cont ul li {
+       font-size:16px;
+       line-height:1.6em;
+   }
+
+   #eymain .panel-body {
+       padding-left: 30px;
+   }
+   </style>
+<div id="eymain" ng-controller="bigSwitchCtrl" class="bigswitch-cont" style="background: #fff;" ng-bind-html="$sce.trustAsHtml(bigSwitchContent)">  
+
+    
+</div>
+<script type="text/javascript">
+  $('.carousel').carousel({
+    interval: 2000  
+  });
+</script>
+
+        

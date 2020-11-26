@@ -1,0 +1,327 @@
+#smMainWrapper {
+    .sm_menu-row {
+        width: 100%;
+        height: 144px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px;
+        background-color: $dash-background-dark;
+
+        &.logo {
+            height: 87px;
+            float: left;
+
+            @include mq($from: tablet) {  
+                float: none;
+            }
+
+            .wrap {
+                width: 80%;
+                height: auto;
+                background-color: $dash-background-dark;
+                
+                svg {
+                    width: 50px;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+        }
+
+        &.filter {
+            background-color: $eyYellow;
+            height: 87px;
+            overflow: hidden;
+            position: relative;
+            float: right;
+            cursor: pointer;
+            display: none;
+            
+            @include mq($from: tablet) { 
+                display: block;
+            }
+
+            .activeOverlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                bottom: 0px;
+                right: 0px;
+                left: 0px;
+                background-color: $dash-background;
+                opacity: 0;
+                z-index: 3;
+
+                @include transition(all, .5s, ease-in-out);
+            }
+
+            .hoverFX {
+                position: absolute;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                bottom: 0px;
+                right: 0px;
+                left: -150px;
+                background-color: $dash-background-dark;
+
+                @include transition(all, .25s, ease-in-out);
+
+            }
+
+            svg {
+                width: 30px;
+
+                @include transition(all, .50s, ease-in-out);
+
+                svg {
+                    g {
+                        fill: $dash-background-dark
+                    }
+
+                    path {
+                        fill: $dash-background-dark
+
+                    }
+                }
+            }
+
+            .filter-inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                position: absolute;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                z-index: 10;
+
+                @include transition(all, .25s, ease-in-out);
+
+            }
+
+            &:hover {
+
+                .filter-inner {
+                    @include rotate(180deg);
+                    zoom: 1.1;
+                }
+
+                .hoverFX {
+                    left: 0px;     
+                }
+
+                svg {
+                    g {
+                        fill: $white;
+                        stroke: $white;
+                    }
+
+                    path {
+                        fill: $white;
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+
+        &.stats {
+            padding: 20px 0px;
+            width: 100%;
+            max-width: 100%;
+            display: none;
+            height: auto;
+
+            @include mq($from: tablet) {  
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+            }
+
+            .icon {
+                margin-bottom: 5px;
+                
+                svg {
+                    width: 30px;
+
+                    g {
+                        fill: $eyYellow;
+                        stroke: $eyYellow;
+                    }
+    
+                    path {
+                        fill: $eyYellow;
+                        stroke: $eyYellow;
+                    }
+                }
+            }
+            
+            span {
+                width: 100%;
+                display: block;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .name {
+                color: $dash-font-grey;
+                @include fontSize(14px);
+                font-weight: bold;
+                line-height: 18px;
+            }
+
+            .data {
+                color: $eyYellow;
+                @include fontSize(16px);
+                font-weight: bold;
+                line-height: 30px;
+                display: inline-block;
+                float: none;
+
+                .value {
+                    display: inline;
+                }
+
+                .currency {
+                    color: $dash-font-grey-lite;
+                    @include fontSize(12px);
+                    font-weight: bold;
+                    line-height: 16px;
+                    display: inline;
+                    float: none;
+                    margin-left: 5px;
+                }
+            }
+
+        }
+    }
+
+    .menu-stats-wrap {
+        width: 100%;
+        display: none;
+        @extend %clearfix;
+
+        @include mq($from: tablet) {  
+            width: unset;
+            display: unset;
+            height: auto;
+        }
+    } 
+}
+
+#smMainWrapper {
+    .sm_dash--wrap {
+        &.fact-sheet-active {
+            .graph-container {
+                opacity: .2;
+            }
+            
+            .graph-container.graphs-wide {
+                opacity: 1;
+            }
+
+            .factsheet-container {
+                z-index: 30;
+                opacity: 1;
+                height: auto;
+                width: 100%;
+        
+                .sm__factsheet-close {
+                    opacity: 1;
+                }
+            }
+
+            .factsheet-container--people {
+                z-index: 30;
+                opacity: 1;
+                height: auto;
+                width: 66.5%;
+        
+                .sm__factsheet-close {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.filter-menu-active {
+            .sm_menu-row  {
+                &.filter {
+
+                    //Apply filter button FX
+                    .filter-inner {
+                        @include rotate(180deg);
+                        zoom: 1.1;
+                    }
+                    .activeOverlay {
+                        opacity: 1;
+                    }
+
+                    .hoverFX {
+                        left: 0px;
+                    }
+
+                    svg {
+                        g {
+                            fill: $white;
+                            stroke: $white;
+                        }
+
+                        path {
+                            fill: $white;
+                            stroke: $white;
+                        }
+                    }
+                }
+            }
+
+            &.fact-sheet-active {
+                &.active {
+
+                    .row-title {
+                        opacity: .2;
+                    }
+
+                    .row-content {
+                        opacity: .2;
+                    }
+                }
+            }
+
+            .graph-container, .dash-data--list {
+                opacity: 0.4;
+            }
+            
+            .graph-container.graphs-wide {
+                opacity: 1;
+            }
+
+            .filter-drop-down {
+                height: auto;
+                padding: 10px 20px 20px 20px;
+            }
+        }
+    }
+}
+
+
+
+
+#smMainWrapper {
+    &.IE {
+        .menu-stats-wrap {
+            display: block;
+        } 
+    }
+}

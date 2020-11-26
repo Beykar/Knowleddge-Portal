@@ -1,0 +1,113 @@
+<div class="mkp__search-results-page" ng-controller="searchCtrl" ng-init="getSearchResults()">
+        
+    <h1>Search</h1>
+
+    <div class="mkp__search-results-box-wrapper">
+        <input  id="mkp_search-btn" type="button" class="button mkp_search-btn" title="Open search function" style="background-color:white">
+        <input type="hidden" class="query" name="q" value="">
+        <input id="search-input1" value="" ng-model="selected" type="text" maxlength="2048" class="mkp__nav-search-query" placeholder="Search..." uib-typeahead="state for state in keywordsArr | filter:$viewValue | orderBy:orderByStartsWith($viewValue) | limitTo:6" ng-keyup= "initFocus()" ng-keydown="$event.keyCode === 13 && getSearch()" focus-me="selected" focus-me>
+						    
+        <!--input ng-click="getSearchResults()" id="mkp_close-search-btn" type="button" class="button mkp_close-search-btn" value="X" title="Clear search"-->
+    </div>
+            
+            
+    <div class="mkp__search-results-message-cont">
+        <p ng-if="searchKeyowrd !== ''">{{totalResults}} results containing: {{searchedKeyword}}</p>
+    </div>
+            
+    <div class="mkp__search-results-cont">
+        <h2>How tos</h2>
+        <ul>
+            <li ng-repeat="result in resultsHT | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                <h3>
+                    <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{result.ELS}}/{{result.BU}}/{{result.SL}}/how-to-{{result.Title}}">{{result.Heading}}</a>
+                </h3>
+                <p ng-bind-html="$sce.trustAsHtml(result.StandFirst) | limitHtml: 200"></p>
+            </li>
+            <li ng-show="!resultsHT.length"><p>No results</p></li>
+        </ul>
+    </div>
+            
+    <div class="mkp__search-results-cont">
+        <h2>Policy and Guidance</h2>
+        <ul>
+            <li ng-repeat="result in resultsPG | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                <h3>
+                    <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{result.ELS}}/{{result.BU}}/{{result.SL}}/policy-{{result.Title}}">{{result.Heading}}</a>
+                </h3>
+                <p ng-bind-html="$sce.trustAsHtml(result.StandFirst) | limitHtml: 200"></p>
+            </li>
+            <li ng-show="!resultsPG.length"><p>No results</p></li>
+        </ul>
+    </div>
+            
+    <div class="mkp__search-results-cont">
+        <h2>Business Guidelines and FAQ</h2>
+        <ul>
+            <li ng-repeat="result in resultsFAQ | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                <h3>
+                    <a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{result.ELS}}/{{result.BU}}/{{result.SL}}/guidance-{{result.Title}}">{{result.Heading}}</a>
+                </h3>
+                <p ng-bind-html="$sce.trustAsHtml(result.StandFirst) | limitHtml: 200"></p>
+            </li>
+            <li ng-show="!resultsFAQ.length"><p>No results</p></li>
+        </ul>
+    </div>
+
+    <div class="mkp__pagination" href="#">
+        <ul>
+            <li ng-class="prevPageDisabled()">
+                <a href ng-click="prevPage()">« Prev</a>
+            </li>
+            <li ng-repeat="n in range()"
+                ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                <a href="#">{{n+1}}</a>
+            </li>
+            <li ng-class="nextPageDisabled()">
+                <a href ng-click="nextPage()">Next »</a>
+            </li>
+        </ul>
+    </div>   
+<!--
+    <div class="mkp__search-results-message-cont">
+        <p ng-if="searchKeyowrd !== ''">87 results containing: {{searchedKeyword}}</p>
+    </div>
+
+    <div class="mkp__search-results-cont">
+        <h2>How tos</h2>
+        <ul>
+            <li>
+                <h3><a href="urlSite/SitePages/index.aspx/engagement-lifecycle/{{tileTitle}}/how-to-{howToTitle}">How to: Create opportunity</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+            <li>
+                <h3><a href="#">How to: Update opportunity</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit praesentium minus cupiditate asperiores autem sunt necessitatibus quod perspiciatis deleniti quia.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mkp__search-results-cont">
+        <h2>Guidance</h2>
+        <ul>
+            <li>
+                <h3><a href="#">Create opportunity guidance</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+        </ul>
+    </div>
+    <div class="mkp__search-results-cont">
+        <h2>Policy</h2>
+        <ul>
+            <li>
+                <h3><a href="#">Create opportunity policy</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est corporis nostrum ratione, dolorum ad earum. Quos dolorem recusandae facilis ipsum!</p>
+            </li>
+        </ul>
+    </div>
+    <a class="mkp__pagination" href="#">
+        <i class="fa fa-long-arrow-right"></i>
+        Next page
+        <br>1 of 10
+    </a>-->
+
+</div>       

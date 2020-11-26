@@ -1,0 +1,107 @@
+<div class="" ng-controller="homeCtrl">
+  <section id="mkp__home-section" class="mkp-home">
+      <div class="mkp__personalisation-bar" ng-if="loggedIn">
+          <div class="mkp__personalisation-inner">	 
+            <img src="SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+            <span class="mkp__salutation">Good morning</span> <span class="mkp__name">{{currentUser.First_Name}}</span>
+            <fieldset enable-button>
+              <label for="mkp__select-business-unit">We're displaying content relevant to you. Currently displaying </label>
+              <select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+                <option ng-repeat="businessUnit in businessUnitArr" ng-selected="businessUnit == currentUser.businessUnit" value="{{businessUnit}}">{{businessUnit}}</option>
+              </select>
+        
+              <label for="mkp__select-service-line">and </label>
+              <select id="mkp__select-service-line" ng-model="selectedServiceLine">
+                <option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+              </select>
+  
+              <button id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+            </fieldset>
+          </div>
+        </div>
+        <div class="mkp__personalisation-bar" ng-if="!loggedIn">
+          <div class="mkp__personalisation-inner">	 
+            <img src="SiteAssets/mercury-knowledge-portal-site/assets/img/profile.svg" width="54" height="54" alt="Profile picture" class="mkp__profile-picture" />
+            <span class="mkp__salutation">Good morning</span> 
+            <fieldset enable-button>
+              <label for="mkp__select-business-unit">Select a Business Unit and a Service Line. Currently displaying </label>
+              <select id="mkp__select-business-unit" ng-model="selectedBusinessUnit">
+                <option ng-repeat="businessUnit in businessUnitArr" value="{{businessUnit}}" >{{businessUnit}}</option>
+              </select>
+        
+              <label for="mkp__select-service-line">and </label>
+              <select id="mkp__select-service-line" ng-model="selectedServiceLine">
+                <option ng-repeat="serviceLine in serviceLineArr" ng-selected="serviceLine == currentUser.serviceLine" value="{{serviceLine}}">{{serviceLine}}</option>
+              </select>
+        
+              <button  id="mkp__button-update-selection" ng-click="updateSelection(selectedBusinessUnit,selectedServiceLine)">Update selection</button>
+            </fieldset>
+          </div>
+        </div>
+    <div class="mkp-home__header">
+      <h1 class="mkp-home__title">
+        Which task can we help you with?
+      </h1>
+      <p class="mkp-home__msg">
+        Find step-by-step How Tos for most tasks un Mercury here,
+        by Engagement Lifecycle stage:
+      </p>
+    </div>
+
+    <div class="mkp-home__info">
+      <div class="mkp-home__info-content">
+        <h2 class="mkp-home__info-title">How to</h2>
+        <ol class="mkp-home__info-list">
+          <li class="mkp-home__info-item">
+            Click on the tile with the step you want to explore
+          </li>
+          <li class="mkp-home__info-item">
+            Click 'see How Tos' to access the step
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="mkp__tile-div mkp-home__tiles">
+      <ul class="clearfix mkp-home__tile-list">
+        <li ng-repeat="Tile in Tiles"
+            class="mkp-home__tile-item"
+            tile-behaviour
+        >
+          <span class="mkp-home__tile-border" ng-style="{'background-color': Tile.Colour}"></span>
+          <a class="mkp-home__tile-anchor" href="#">
+            <img
+              class="mkp-home__tile-img"
+              src="{{ Tile.ImageURL }}"
+              alt="{{ Tile.TileLink }}"
+            />
+            <h2 class="mkp-home__tile-title">
+              <span>{{ $index }}. {{ Tile.Title }}</span>
+            </h2>
+          </a>
+          <div class="mkp-home__tile-overlay">
+            <input
+              type="button"
+              class="button mkp-home__close"
+              value="X"
+              title="Close tile extra info"
+            />
+            <p class="mkp-home__overlay-text">
+              <strong>What?</strong><br />
+              {{ Tile.Description }}
+            </p>
+            <a ng-click="getParams(Tile.Title)" class="mkp-home__anchor-overlay"
+              href="SitePages/index.aspx/engagement-lifecycle/{{ Tile.Title }}/{{updatedbusUn}}/{{updatedServLn}}"
+              >See How Tos</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="mkp-home__key-list">
+          <li><b>Key:</b></li>
+          <li><span class="orange"></span><b>Orange:</b> Selling an opportunity</li>
+          <li><span class="green"></span><b>Green:</b> Planning an engagement</li>
+          <li><span class="turquoise"></span><b>Turquoise:</b> Delivering an engagement</li>
+      </ul>
+    </div>
+  </section>
+</div>

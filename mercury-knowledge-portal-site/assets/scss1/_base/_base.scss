@@ -1,0 +1,91 @@
+/* Base styling
+   ========================================================================== */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.ms-rte-layoutszone-outer {
+  background-color: $white !important;
+}
+
+#mkpMainWrapper {
+  background-color: $white;
+  margin: 0 auto;
+  h1 {
+    color: $mkpOffBlack;
+    font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+    @include fontSize(32px);
+    line-height: 41px;
+    max-width: 21em;
+  }
+  h2,
+  h3,
+  h4 {
+    color: $mkpOffBlack;
+    font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+    @include fontSize(18px);
+    line-height: 28px;
+  }
+  p {
+    color: $mkpOffBlack;
+    font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+    @include fontSize(18px);
+    line-height: 28px;
+
+    .font-weight-bolder {
+      font-family: EYInterstate-Regular, Tahoma, Helvetica, Arial, sans-serif;
+    }
+  }
+
+  .mkp__main-cont {
+    padding-top: 353px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include mq($from: desktop) {
+      padding-top: 62px;
+    }
+    @include mq($from: desktopMid) {
+      padding-top: 140px;
+    }
+  }
+
+  ol {
+    li {
+      color: $mkpOffBlack;
+      font-family: EYInterstate-Light, Tahoma, Helvetica, Arial, sans-serif;
+      @include fontSize(18px);
+      line-height: 28px;
+      margin-left: 21px;
+    }
+    margin-bottom: 10px;
+  }
+  
+  #processing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: white;
+    opacity: 0.8;
+	
+	img {
+		width: 20%;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+  }
+  
+}
